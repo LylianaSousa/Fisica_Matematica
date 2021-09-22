@@ -1,0 +1,3357 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    113045,       3349]
+NotebookOptionsPosition[    110050,       3289]
+NotebookOutlinePosition[    110384,       3304]
+CellTagsIndexPosition[    110341,       3301]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Lista IV - F\[IAcute]sica Matem\[AAcute]tica 1",
+ FontColor->GrayLevel[0]]], "Title",
+ CellChangeTimes->{{3.807386962455276*^9, 3.807387039630821*^9}, {
+   3.8073870920003557`*^9, 3.807387094132812*^9}, 3.80738727432327*^9, 
+   3.809629215631225*^9, 3.814975710883255*^9},
+ TextAlignment->Center,ExpressionUUID->"effb5c00-3ce9-469b-8f85-4ab07d46e715"],
+
+Cell[TextData[StyleBox["Lyliana Myllena Santos de Sousa - 11223740\n\
+Lyliana.Sousa@usp.br",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.807387164449913*^9, 3.807387182028096*^9}, {
+  3.8074344445480022`*^9, 3.807434456924179*^9}},
+ TextAlignment->Center,ExpressionUUID->"87594bf7-d843-4357-8f26-f7fcbc819380"],
+
+Cell[CellGroupData[{
+
+Cell["1.a)", "Section",
+ CellChangeTimes->{{3.807387367161895*^9, 3.807387368881872*^9}, {
+  3.807439797431518*^9, 3.807439799004826*^9}, {3.8096297178327303`*^9, 
+  3.809629719011891*^9}, {3.814796551079089*^9, 
+  3.814796551277774*^9}},ExpressionUUID->"d5047e30-8ae2-4626-84e9-\
+c36c3dcec65d"],
+
+Cell[TextData[{
+ StyleBox["Nessa quest\[ATilde]o, vamos mostrar algumas das famosa \
+Transformadas de Fourier da f\[IAcute]sica. Primeiro  vou mostrar a \
+Transformada de Fourier  da fun\[CCedilla]\[ATilde]o ",
+  FontColor->GrayLevel[0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[ScriptF]", "(", "x", ")"}], " ", "=", " ", 
+    RowBox[{
+     SuperscriptBox["\[ScriptE]", 
+      RowBox[{"-", "mx"}]], 
+     RowBox[{"\[Theta]", "(", "x", ")"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "41126698-85ce-44ff-a639-f3b3d3a302e9"],
+ "  ",
+ StyleBox["(1.1)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", onde ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"m", ">", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "030c7c9a-49ef-4927-96a6-fd2e4977ef5a"],
+ " ",
+ StyleBox["(1.2) ",
+  FontColor->RGBColor[1, 0, 0]],
+ "e ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Theta]", "(", "x", ")"}], "=", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {"1", 
+           RowBox[{",", " ", 
+            RowBox[{"x", ">", "0"}]}]},
+          {"0", 
+           RowBox[{",", 
+            RowBox[{"x", "<", "0"}]}]}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+         GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e5d1fb23-0768-4741-9eb3-65a957a88ac6"],
+ " ",
+ StyleBox["(1.3) ",
+  FontColor->RGBColor[1, 0, 0]],
+ "\[EAcute]  fun\[CCedilla]\[ATilde]o Heaviside, com isso tenho que ",
+ StyleBox[" ",
+  FontColor->GrayLevel[0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[ScriptF]", "(", "x", ")"}], " ", "=", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {
+           RowBox[{" ", 
+            SuperscriptBox["\[ScriptE]", 
+             RowBox[{"-", "mx"}]]}], 
+           RowBox[{",", " ", 
+            RowBox[{"x", ">", "0"}]}]},
+          {"0", 
+           RowBox[{",", 
+            RowBox[{"x", "<", "0"}]}]}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+         GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "86e6a815-c47b-4e50-a514-924e8f261947"],
+ StyleBox["(1.4)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Usarei esses conceitos para mostrar que a Inversa da Transformada  de \
+Fourier  para concluir que ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "k"}], 
+       RowBox[{"2", "\[Pi]"}]], " ", 
+      FractionBox[
+       SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], 
+       RowBox[{"m", " ", "+", "\[ImaginaryI]k"}]]}]}], " ", "=", " ", 
+    RowBox[{
+     SuperscriptBox["\[ScriptE]", 
+      RowBox[{"-", "mx"}]], 
+     RowBox[{"\[Theta]", "(", "x", ")"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0dc03483-51d2-485a-a7a9-c98e7838a5db"],
+ " ",
+ StyleBox["(1.5)",
+  FontColor->RGBColor[1, 0, 0]],
+ ".\n\[RightArrow] Calculando a Transformada de Fourier: Usarei uma mudan\
+\[CCedilla]a de vari\[AAcute]vel no processo, onde ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"u", "=", 
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{"mx", "+", " ", "\[ImaginaryI]kx"}], ")"}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "45d13af0-0477-467d-86f6-2c9d4bd517b5"],
+ StyleBox["(1.6)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", onde  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"du", "=", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"(", 
+       RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}], ")"}]}], "dx"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4794d199-5b1b-457d-adbf-ccbfa6f56166"],
+ " ",
+ StyleBox["(1.7)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", com ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"u", "(", "\[Infinity]", ")"}], "=", 
+    RowBox[{"-", "\[Infinity]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "377d3c8c-9721-471a-a2b9-84f1b13218ba"],
+ " e ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"u", "(", "0", ")"}], "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7a22e86c-2551-4284-a0dc-41416a797f96"],
+ "\n ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox["\[ScriptF]", "~"], " ", 
+     RowBox[{"(", "k", ")"}]}], " ", "=", " ", 
+    RowBox[{
+     FractionBox["1", 
+      SqrtBox[
+       RowBox[{"2", "\[Pi]"}]]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{"\[ScriptF]", "(", "x", ")"}], 
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{"-", "\[ImaginaryI]kx"}]], 
+       RowBox[{"\[DifferentialD]", "x"}]}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4540cd77-b6ed-40ae-8e91-7c0c460e82ce"],
+ "  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{"=", " ", 
+     RowBox[{
+      FractionBox["1", 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]"}]]], 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", "\[Infinity]"], 
+       RowBox[{
+        SuperscriptBox["\[ScriptE]", 
+         RowBox[{"-", 
+          RowBox[{"(", 
+           RowBox[{"mx", " ", "+", " ", "\[ImaginaryI]kx"}], ")"}]}]], 
+        RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"8e936c7a-fd36-4040-8eb4-86af09b0ea51"],
+ "  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{"=", 
+     RowBox[{
+      RowBox[{"-", " ", 
+       FractionBox["1", 
+        SqrtBox[
+         RowBox[{"2", "\[Pi]"}]]]}], 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", 
+        RowBox[{"-", "\[Infinity]"}]], 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox["\[ScriptE]", "u"], 
+         RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]], 
+        RowBox[{"\[DifferentialD]", "u"}]}]}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"b3550373-bf77-458d-b5d1-77b8da6c4a9a"],
+ "   ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{"=", " ", 
+     RowBox[{
+      FractionBox["1", 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]"}]]], 
+      FractionBox["1", 
+       RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]], 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "0"], 
+       RowBox[{
+        SuperscriptBox["\[ScriptE]", "u"], 
+        RowBox[{"\[DifferentialD]", "u"}]}]}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"c9008e56-05cd-4283-a6fb-41bea30e57c6"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{"=", " ", 
+     RowBox[{
+      RowBox[{
+       FractionBox["1", 
+        SqrtBox[
+         RowBox[{"2", "\[Pi]"}]]], 
+       FractionBox["1", 
+        RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]], 
+       SuperscriptBox["\[ScriptE]", "u"]}], 
+      SubsuperscriptBox["|", 
+       RowBox[{"-", "\[Infinity]"}], "0"]}]}]}], TraditionalForm]],
+  ExpressionUUID->"13929485-2ba5-43d6-8132-87f87710dcad"],
+ "\n  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox["\[ScriptF]", "~"], " ", 
+     RowBox[{"(", "k", ")"}]}], " ", "=", " ", 
+    RowBox[{
+     FractionBox["1", 
+      SqrtBox[
+       RowBox[{"2", "\[Pi]"}]]], 
+     FractionBox["1", 
+      RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b7326ca7-3f0e-4610-b00c-6f8002953f4d"],
+ StyleBox["(1.8)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n  Agora calculando a sua transformada inversa: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[ScriptF]", "(", "x", ")"}], " ", 
+    FormBox[
+     RowBox[{"=", " ", 
+      RowBox[{
+       FractionBox["1", 
+        SqrtBox[
+         RowBox[{"2", "\[Pi]"}]]], 
+       RowBox[{
+        SubsuperscriptBox["\[Integral]", 
+         RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+        RowBox[{
+         OverscriptBox["\[ScriptF]", "~"], " ", 
+         RowBox[{"(", "k", ")"}], " ", 
+         SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], 
+         RowBox[{"\[DifferentialD]", "k"}]}]}]}]}],
+     TraditionalForm]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "362e51ae-a18e-445a-b85c-36f3b63ac42c"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   FormBox[
+    RowBox[{" ", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       FractionBox["1", 
+        RowBox[{"2", "\[Pi]"}]], 
+       FractionBox[
+        SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], 
+        RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]], " ", 
+       RowBox[{"\[DifferentialD]", "k"}]}]}]}],
+    TraditionalForm], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "b6be6483-cf53-4141-9427-ff9a8c0fc857"],
+ StyleBox[" = ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[ScriptE]", 
+     RowBox[{"-", "mx"}]], 
+    RowBox[{"\[Theta]", "(", "x", ")"}]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "9c8c27f0-ba53-436c-8b39-3b5cd117c441"],
+ " ",
+ StyleBox["(1.9)",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Subsubsection",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQPfdE1xnP5DeOO8qmXQfRM751PgTRSVWyz0G0W6jY
+RxCdwmL0A0Rfsy1k8ALSy6SWgekD53p5QHSp4i0JEK1iZSILorMM72qC6A2n
+K/VAdE/6fCMQHZCsYQWiCyq0wfTfl0n2IPqEhaI7iDbesiEURO8J+J0MouN2
+3koH0W7tGfvB5sZNX6ia88YxzYRvEYhWe3JUygNIT/f4IAuiDwXP1gXRXS/Z
+MkC0j294LoiuZ09aD6K91Du3gugXvxa9BNGeezYpewJpP+tXYLrrVJQFiD5Z
+qmAFonVqEn38gPRtI6sIEA0AleiORA==
+  "],
+ FontColor->GrayLevel[
+  0],ExpressionUUID->"0d6baea0-c377-4133-9378-a7659a432eb8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.b)", "Section",
+ CellChangeTimes->{{3.807387367161895*^9, 3.807387368881872*^9}, {
+  3.807439797431518*^9, 3.807439799004826*^9}, {3.809629731402306*^9, 
+  3.8096297382919817`*^9}, {3.814796563035873*^9, 
+  3.8147965638692007`*^9}},ExpressionUUID->"827bba0a-2b21-4f57-92de-\
+caa35ef01527"],
+
+Cell[TextData[{
+ "Agora, utilizarei uma mudan\[CCedilla]a de vari\[AAcute]vel na Eq.",
+ StyleBox["(1.9)",
+  FontColor->RGBColor[1, 0, 0]],
+ " para mostrar algumas rela\[CCedilla]\[OTilde]es:\n\[RightArrow] Usando a \
+mudan\[CCedilla]a de vari\[AAcute]vel -k = k\[CloseCurlyQuote] \
+\[DoubleRightArrow] -dk = dk\[CloseCurlyQuote] . Assim, tenho:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", "\[Pi]"}]], 
+      FractionBox[
+       SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], 
+       RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]], " ", 
+      RowBox[{"\[DifferentialD]", "k"}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"6b9671aa-ff65-4d33-a755-05d93b503df8"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{"-", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", "\[Infinity]", 
+       RowBox[{"-", "\[Infinity]"}]], 
+      RowBox[{
+       FractionBox["1", 
+        RowBox[{"2", "\[Pi]"}]], 
+       FractionBox[
+        SuperscriptBox["\[ScriptE]", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"\[ImaginaryI]k", "'"}]}], "x"}]], 
+        RowBox[{"m", " ", "-", " ", 
+         RowBox[{"\[ImaginaryI]k", "'"}]}]], " ", 
+       RowBox[{"\[DifferentialD]", 
+        RowBox[{"k", "'"}]}]}]}]}]}], TraditionalForm]],ExpressionUUID->
+  "06009103-8bf0-4403-8f7f-571f65fe40ce"],
+ "=",
+ StyleBox[" ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", "\[Pi]"}]], 
+      FractionBox[
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{
+         RowBox[{"-", 
+          RowBox[{"\[ImaginaryI]k", "'"}]}], "x"}]], 
+       RowBox[{"m", " ", "-", " ", 
+        RowBox[{"\[ImaginaryI]k", "'"}]}]], " ", 
+      RowBox[{"\[DifferentialD]", 
+       RowBox[{"k", "'"}]}]}]}]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "05fb5e7a-7c49-4e85-981c-c5ba60a9d154"],
+ StyleBox["= ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[ScriptE]", 
+     RowBox[{"-", "mx"}]], 
+    RowBox[{"\[Theta]", "(", "x", ")"}]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "e88d1e07-d6db-4003-8ba1-3ef86245e9a5"],
+ StyleBox[" ",
+  Background->RGBColor[1, 1, 0]],
+ StyleBox["(",
+  FontColor->RGBColor[1, 0, 0],
+  Background->RGBColor[1, 1, 0]],
+ StyleBox["1.10)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\[RightArrow] Usando a mudan\[CCedilla]a de vari\[AAcute]vel de -x\
+\[CloseCurlyQuote]=x , tenho que:\n  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", "\[Pi]"}]], 
+      FractionBox[
+       SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], 
+       RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]], " ", 
+      RowBox[{"\[DifferentialD]", "k"}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"5db11838-a2ef-4698-938d-116bbcf35c1c"],
+ "=",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", "\[Pi]"}]], 
+      FractionBox[
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{"-", 
+         RowBox[{"\[ImaginaryI]kx", "'"}]}]], 
+       RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]], " ", 
+      RowBox[{"\[DifferentialD]", 
+       RowBox[{"k", "'"}]}]}]}]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "8973117a-540f-42a0-899e-cd3572a2c06e"],
+ StyleBox["= ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[ScriptE]", 
+     RowBox[{"mx", "'"}]], 
+    RowBox[{"\[Theta]", "(", 
+     RowBox[{"-", 
+      RowBox[{"x", "'"}]}], ")"}]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "9d20f60a-6f85-4e62-97fa-428c572382f6"],
+ StyleBox[" ",
+  Background->RGBColor[1, 1, 0]],
+ StyleBox["(1.11)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\[RightArrow] Usando a mudan\[CCedilla]a de variavel k\[CloseCurlyQuote]= \
+- ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["k", "-"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c47cdf10-c6e6-4b29-b22e-a01f1cd19490"],
+ " \[DoubleRightArrow] dk\[CloseCurlyQuote]= -d ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["k", "-"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8393eb53-9d83-418c-bdbe-a340196e8cde"],
+ ",  na rela\[CCedilla]\[ATilde]o anterior, eu tenho que:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", 
+     RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"2", "\[Pi]"}]], 
+     FractionBox[
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{"-", 
+        RowBox[{"\[ImaginaryI]kx", "'"}]}]], 
+      RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]], " ", 
+     RowBox[{"\[DifferentialD]", 
+      RowBox[{"k", "'"}]}]}]}], TraditionalForm]],ExpressionUUID->
+  "5beb5a1e-3afe-458e-abd1-1d6ae505622c"],
+ "= ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"-", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", "\[Infinity]", 
+      RowBox[{"-", "\[Infinity]"}]], 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", "\[Pi]"}]], 
+      FractionBox[
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], 
+         OverscriptBox["k", "-"], 
+         RowBox[{"x", "'"}]}]], 
+       RowBox[{"m", " ", "-", " ", 
+        RowBox[{"\[ImaginaryI]", 
+         OverscriptBox["k", "-"]}]}]], " ", 
+      RowBox[{"\[DifferentialD]", 
+       OverscriptBox["k", "-"]}]}]}]}], TraditionalForm]],ExpressionUUID->
+  "54c41f32-0e6b-4b36-b861-86dfa96929dd"],
+ " = ",
+ StyleBox[" ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", "\[Pi]"}]], 
+      FractionBox[
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], 
+         OverscriptBox["k", "-"], 
+         RowBox[{"x", "'"}]}]], 
+       RowBox[{"m", " ", "-", " ", 
+        RowBox[{"\[ImaginaryI]", 
+         OverscriptBox["k", "-"]}]}]], " ", 
+      RowBox[{"\[DifferentialD]", 
+       OverscriptBox["k", "-"]}]}]}], " ", "=", 
+    RowBox[{
+     SuperscriptBox["\[ScriptE]", 
+      RowBox[{"mx", "'"}]], 
+     RowBox[{"\[Theta]", "(", 
+      RowBox[{"-", 
+       RowBox[{"x", "'"}]}], ")"}], " "}]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "ea245ba5-8129-451e-bee4-2997c0672684"],
+ StyleBox["(1.12)",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Subsubsection",
+ CellChangeTimes->{{3.810154036289444*^9, 3.810154143005743*^9}, {
+   3.810154178533949*^9, 3.810154616337492*^9}, {3.810475058460581*^9, 
+   3.81047508885226*^9}, 3.8147965668527718`*^9, {3.814868863088264*^9, 
+   3.814868912387804*^9}, {3.814868966540921*^9, 3.814869154106469*^9}, {
+   3.814869227351674*^9, 3.814869400791135*^9}, {3.814869471633553*^9, 
+   3.8148695343742723`*^9}, 3.81486957194569*^9, 3.814869616435238*^9, {
+   3.814869721644136*^9, 3.8148700832140713`*^9}, {3.8148799559993877`*^9, 
+   3.8148799913748426`*^9}},
+ FontColor->GrayLevel[
+  0],ExpressionUUID->"519b759b-bd1b-402d-bc74-75f07772c057"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.c)", "Section",
+ CellChangeTimes->{{3.807387367161895*^9, 3.807387368881872*^9}, {
+  3.807439797431518*^9, 3.807439799004826*^9}, {3.8096297506893063`*^9, 
+  3.809629752210331*^9}, {3.81479656908615*^9, 
+  3.814796569399325*^9}},ExpressionUUID->"e7c90e22-56a1-4122-8f46-\
+03d6f20ffbae"],
+
+Cell[TextData[{
+ "Agora combinarei em uma soma as equa\[CCedilla]\[OTilde]es Eq.",
+ StyleBox["(1.9)",
+  FontColor->RGBColor[1, 0, 0]],
+ " e Eq.",
+ StyleBox["(1.12)",
+  FontColor->RGBColor[1, 0, 0]],
+ " , assim:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "k"}], 
+       RowBox[{"2", "\[Pi]"}]], 
+      RowBox[{
+       SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], "(", 
+       RowBox[{
+        FractionBox["1", 
+         RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]], " ", "+", 
+        FractionBox["1", 
+         RowBox[{"m", " ", "-", " ", "\[ImaginaryI]k"}]]}], ")"}], " "}]}]}], 
+   TraditionalForm]],ExpressionUUID->"6fc6f5db-8b59-4af7-aa80-5591449dbc34"],
+ "= ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", 
+     RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[DifferentialD]", "k"}], 
+      RowBox[{"2", "\[Pi]"}]], 
+     SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], 
+     FractionBox[
+      RowBox[{"2", "m"}], 
+      RowBox[{
+       SuperscriptBox["m", "2"], " ", "+", " ", 
+       SuperscriptBox["k", "2"]}]]}]}], TraditionalForm]],ExpressionUUID->
+  "2c81d319-1e66-43b4-b392-0452d2a39335"],
+ "=  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[ScriptE]", 
+     RowBox[{"-", "mx"}]], 
+    RowBox[{"\[Theta]", "(", "x", ")"}]}], TraditionalForm]],ExpressionUUID->
+  "30ea3de8-9ae0-4820-b886-0fe1892c6519"],
+ " +  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[ScriptE]", "mx"], 
+    RowBox[{"\[Theta]", "(", 
+     RowBox[{"-", "x"}], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "46034e0f-bad9-4d73-86bc-ff8bf3b63d4f"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{" ", 
+           SuperscriptBox["\[ScriptE]", 
+            RowBox[{"-", "mx"}]]}], 
+          RowBox[{",", " ", 
+           RowBox[{"x", ">", "0"}]}]},
+         {
+          RowBox[{" ", 
+           SuperscriptBox["\[ScriptE]", "mx"]}], 
+          RowBox[{",", 
+           RowBox[{"x", "<", "0"}]}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], TraditionalForm]],ExpressionUUID->
+  "db65af4e-678a-498c-a2ae-056956dcf94e"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    SuperscriptBox["\[ScriptE]", 
+     RowBox[{
+      RowBox[{"-", "m"}], "|", "x", "|"}]]}], TraditionalForm]],
+  ExpressionUUID->"9d4fa297-fcef-4589-b1bb-07525a4f3bff"],
+ ". Disso, eu tiro que:\n",
+ StyleBox[" ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", 
+     RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[DifferentialD]", "k"}], 
+      RowBox[{"2", "\[Pi]"}]], 
+     FractionBox[
+      SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], 
+      RowBox[{
+       SuperscriptBox["m", "2"], " ", "+", " ", 
+       SuperscriptBox["k", "2"]}]]}]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "e00dc533-d37a-4e55-b21a-2743acdd18e7"],
+ StyleBox["= ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    FractionBox[
+     SuperscriptBox["\[ScriptE]", 
+      RowBox[{
+       RowBox[{"-", "m"}], "|", "x", "|"}]], 
+     RowBox[{"2", "m"}]]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "c69854d6-268d-4752-b713-ea59ee469ccb"],
+ StyleBox["(1.13)",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Subsubsection",
+ CellChangeTimes->{{3.810474352474628*^9, 3.81047483235502*^9}, {
+   3.810475101124681*^9, 3.810475130052515*^9}, 3.8147965771593227`*^9, {
+   3.8148709545863733`*^9, 3.814871005711815*^9}, {3.814871040620229*^9, 
+   3.8148713039982777`*^9}, {3.814879996453652*^9, 3.814880024736931*^9}},
+ FontColor->GrayLevel[
+  0],ExpressionUUID->"3f9206ef-99d7-4472-87d5-c94b2697749e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.d)", "Section",
+ CellChangeTimes->{{3.807387367161895*^9, 3.807387368881872*^9}, {
+  3.807439797431518*^9, 3.807439799004826*^9}, {3.80962976736512*^9, 
+  3.8096297683706617`*^9}, {3.814796583443336*^9, 
+  3.8147965848223963`*^9}},ExpressionUUID->"1bc211f6-f7ed-4a03-9668-\
+33ffe989b029"],
+
+Cell[TextData[{
+ "Agora combinarei em uma soma as equa\[CCedilla]\[OTilde]es Eq.",
+ StyleBox["(1.9)",
+  FontColor->RGBColor[1, 0, 0]],
+ " e Eq.",
+ StyleBox["(1.12)",
+  FontColor->RGBColor[1, 0, 0]],
+ " , assim:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "k"}], 
+       RowBox[{"2", "\[Pi]"}]], 
+      RowBox[{
+       SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], "(", 
+       RowBox[{
+        FractionBox["1", 
+         RowBox[{"m", " ", "+", " ", "\[ImaginaryI]k"}]], " ", "-", 
+        FractionBox["1", 
+         RowBox[{"m", " ", "-", " ", "\[ImaginaryI]k"}]]}], ")"}], " "}]}]}], 
+   TraditionalForm]],ExpressionUUID->"e9980a4e-2dbd-49a5-9d9c-62560f3b66d4"],
+ "= ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", 
+     RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[DifferentialD]", "k"}], 
+      RowBox[{"2", "\[Pi]"}]], 
+     SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], 
+     FractionBox[
+      RowBox[{
+       RowBox[{"-", "2"}], "\[ImaginaryI]k"}], 
+      RowBox[{
+       SuperscriptBox["m", "2"], " ", "+", " ", 
+       SuperscriptBox["k", "2"]}]]}]}], TraditionalForm]],ExpressionUUID->
+  "0ef55d0d-d896-4dab-a767-0b5c1c369c09"],
+ "=  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[ScriptE]", 
+     RowBox[{"-", "mx"}]], 
+    RowBox[{"\[Theta]", "(", "x", ")"}]}], TraditionalForm]],ExpressionUUID->
+  "c03262dd-957b-41b1-94e7-99a1e9fd50f0"],
+ " -  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[ScriptE]", "mx"], 
+    RowBox[{"\[Theta]", "(", 
+     RowBox[{"-", "x"}], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "ead83333-aa96-42fb-86fd-82d6c221a4d2"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{" ", 
+           SuperscriptBox["\[ScriptE]", 
+            RowBox[{"-", "mx"}]]}], 
+          RowBox[{",", " ", 
+           RowBox[{"x", ">", "0"}]}]},
+         {
+          RowBox[{" ", 
+           RowBox[{"-", 
+            SuperscriptBox["\[ScriptE]", "mx"]}]}], 
+          RowBox[{",", 
+           RowBox[{"x", "<", "0"}]}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], TraditionalForm]],ExpressionUUID->
+  "05810204-29cd-49eb-9378-eb2939307009"],
+ " . Disso, eu tiro que:\n",
+ StyleBox[" ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", 
+     RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[DifferentialD]", "k"}], 
+      RowBox[{"2", "\[Pi]"}]], 
+     FractionBox[
+      SuperscriptBox["k\[ScriptE]", "\[ImaginaryI]kx"], 
+      RowBox[{
+       SuperscriptBox["m", "2"], " ", "+", " ", 
+       SuperscriptBox["k", "2"]}]]}]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "83b1c43a-f9fa-45a7-a928-950ee3d47075"],
+ StyleBox["= ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"  ", 
+    FormBox[
+     TagBox[GridBox[{
+        {"\[Piecewise]", GridBox[{
+           {
+            RowBox[{" ", 
+             RowBox[{"-", 
+              FractionBox[
+               SuperscriptBox["\[ScriptE]", 
+                RowBox[{"-", "mx"}]], 
+               RowBox[{"2", "\[ImaginaryI]"}]]}]}], 
+            RowBox[{",", " ", 
+             RowBox[{"x", ">", "0"}]}]},
+           {
+            RowBox[{" ", 
+             FractionBox[
+              SuperscriptBox["\[ScriptE]", "mx"], 
+              RowBox[{"2", "\[ImaginaryI]"}]]}], 
+            RowBox[{",", 
+             RowBox[{"x", "<", "0"}]}]}
+          },
+          AllowedDimensions->{2, Automatic},
+          Editable->True,
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+          GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.84]}, 
+              Offset[0.27999999999999997`]}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]}, 
+              Offset[0.2]}},
+          Selectable->True]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.35]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      "Piecewise",
+      DeleteWithContents->True,
+      Editable->False,
+      SelectWithContents->True,
+      Selectable->False],
+     TraditionalForm]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "aa19690f-d8c3-45ff-9b70-36469d6984fa"],
+ StyleBox["(1.14)",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Subsubsection",
+ CellChangeTimes->{{3.8103879406013327`*^9, 3.810388531491777*^9}, {
+   3.810388564998414*^9, 3.810388715776411*^9}, 3.814796590175572*^9, 
+   3.8148713352456503`*^9, {3.8148713702316713`*^9, 3.8148714821373053`*^9}, {
+   3.8148800733717957`*^9, 3.8148800851338587`*^9}},
+ FontColor->GrayLevel[
+  0],ExpressionUUID->"6440d672-92ea-4cae-ba70-7a112470d8c9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.", "Section",
+ CellChangeTimes->{{3.807387367161895*^9, 3.807387368881872*^9}, {
+  3.807439797431518*^9, 3.807439799004826*^9}, {3.809629771624031*^9, 
+  3.809629776869276*^9}, {3.814796596543025*^9, 
+  3.814796596920658*^9}},ExpressionUUID->"5689e171-a44f-4b7e-9a71-\
+a3ef92d5dead"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Analisaremos agora o problema de Cauchy para a Equa\[CCedilla]\[ATilde]o de \
+Calor com um termo restaurador linear. Onde eu usarei a Transformada de \
+Fourier para obter a solu\[CCedilla]\[ATilde]o. A condi\[CCedilla]\[OTilde]es \
+do nosso problema s\[ATilde]o: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["u", "t"], " ", "=", " ", 
+    RowBox[{
+     SubscriptBox["\[Alpha]u", "xx"], "-", 
+     RowBox[{
+      SuperscriptBox["m", "2"], "u"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c66bec7a-059d-4267-af63-a9abc5f377f1"],
+ StyleBox["(2.1)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"u", "(", 
+     RowBox[{"x", ",", "0"}], ")"}], " ", "=", " ", 
+    RowBox[{"\[Delta]", "(", 
+     RowBox[{"x", "-", 
+      SubscriptBox["x", "0"]}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "51baba40-4143-4aff-9a91-0e83c0272bcb"],
+ " ",
+ StyleBox["(2.2)",
+  FontColor->RGBColor[1, 0, 0]],
+ "e m > 0",
+ StyleBox["(2.3)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Assim, aplicando a Transformada de Fourier na equa\[CCedilla]\[ATilde]o \
+do calor:\n\[RightArrow]   ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "x"}], 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]"}]]], " ", 
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{"-", "\[ImaginaryI]kx"}]], 
+      RowBox[{
+       SubscriptBox["u", "t"], "(", 
+       RowBox[{"x", ",", "t"}], ")"}]}]}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"\[Alpha]", 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        FractionBox[
+         RowBox[{"\[DifferentialD]", "x"}], 
+         SqrtBox[
+          RowBox[{"2", "\[Pi]"}]]], " ", 
+        SuperscriptBox["\[ScriptE]", 
+         RowBox[{"-", "\[ImaginaryI]kx"}]], 
+        RowBox[{
+         SubscriptBox["u", "xx"], "(", 
+         RowBox[{"x", ",", "t"}], ")"}]}]}]}], "-", 
+     RowBox[{
+      SuperscriptBox["m", "2"], 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        FractionBox[
+         RowBox[{"\[DifferentialD]", "x"}], 
+         SqrtBox[
+          RowBox[{"2", "\[Pi]"}]]], " ", 
+        SuperscriptBox["\[ScriptE]", 
+         RowBox[{"-", "\[ImaginaryI]kx"}]], 
+        RowBox[{"u", "(", 
+         RowBox[{"x", ",", "t"}], ")"}]}]}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "72f881ec-436f-4981-9143-65034a7d6fbe"],
+ " ",
+ StyleBox["(2.4)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nVou resolver separadamente cada integral, assim:\n\[RightTeeArrow]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "x"}], 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]"}]]], " ", 
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{"-", "\[ImaginaryI]kx"}]], 
+      RowBox[{
+       SubscriptBox["u", "t"], "(", 
+       RowBox[{"x", ",", "t"}], ")"}]}]}], " ", "="}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cfc90aaf-7aa5-4aad-b434-726f77f671f5"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "x"}], 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]"}]]], " ", 
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{"-", "\[ImaginaryI]kx"}]], 
+      RowBox[{
+       FractionBox["\[DifferentialD]", 
+        RowBox[{"\[DifferentialD]", "t"}]], 
+       RowBox[{"u", "(", 
+        RowBox[{"x", ",", "t"}], ")"}]}]}]}], " ", "="}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "22c27d15-a63e-44a9-8dcf-5e2b96859b2d"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["\[DifferentialD]", 
+      RowBox[{"\[DifferentialD]", "t"}]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[DifferentialD]", "x"}], 
+        SqrtBox[
+         RowBox[{"2", "\[Pi]"}]]], " ", 
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{"-", "\[ImaginaryI]kx"}]], 
+       RowBox[{"u", "(", 
+        RowBox[{"x", ",", "t"}], ")"}]}]}]}], " ", "="}], TraditionalForm]],
+  ExpressionUUID->"8be6a483-de12-4369-bbff-b41f24e8a339"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["\[DifferentialD]", 
+     RowBox[{"\[DifferentialD]", "t"}]], 
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "t"}], ")"}], " "}], TraditionalForm]],ExpressionUUID->
+  "bee72f77-6e45-434b-b4f3-868b2ce63b30"],
+ StyleBox["(2.5)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\[RightTeeArrow]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "x"}], 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]"}]]], " ", 
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{"-", "\[ImaginaryI]kx"}]], 
+      RowBox[{
+       SubscriptBox["u", "xx"], "(", 
+       RowBox[{"x", ",", "t"}], ")"}]}]}], " ", "="}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "253eddbc-9753-48e7-83cf-de6a85b3f9d6"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "x"}], 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]"}]]], " ", 
+      RowBox[{
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{"-", "\[ImaginaryI]kx"}]], "(", "\[ImaginaryI]k", ")"}], 
+      RowBox[{"\.b2u", "(", 
+       RowBox[{"x", ",", "t"}], ")"}]}]}], " ", "="}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "720e81aa-4933-43f4-bb07-d9b92b743b1a"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", "\[ImaginaryI]k", ")"}], "\.b2", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[DifferentialD]", "x"}], 
+        SqrtBox[
+         RowBox[{"2", "\[Pi]"}]]], " ", 
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{"-", "\[ImaginaryI]kx"}]], 
+       RowBox[{"u", "(", 
+        RowBox[{"x", ",", "t"}], ")"}]}]}]}], " ", "="}], TraditionalForm]],
+  ExpressionUUID->"12656880-e6f6-4050-8ded-be3b2b81bbc6"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", "\[ImaginaryI]k", ")"}], "\.b2", 
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "t"}], ")"}], " "}], TraditionalForm]],ExpressionUUID->
+  "03ab17bc-81b6-4d91-b064-0f3980612482"],
+ "=",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", "k\.b2"}], 
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "t"}], ")"}], " "}], TraditionalForm]],ExpressionUUID->
+  "3d77b204-f6f1-46e9-b174-fb7eeeeea4df"],
+ StyleBox["(2.6)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\[RightTeeArrow]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", 
+     SuperscriptBox["m", "2"]}], 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "x"}], 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]"}]]], " ", 
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{"-", "\[ImaginaryI]kx"}]], 
+      RowBox[{"u", "(", 
+       RowBox[{"x", ",", "t"}], ")"}]}]}]}], TraditionalForm]],ExpressionUUID->
+  "298cee2e-b42d-47e3-bc54-437d077c20ad"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", "m\.b2"}], 
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "t"}], ")"}], " "}], TraditionalForm]],ExpressionUUID->
+  "44ab7419-9d2b-4cea-8e76-94b5349b9267"],
+ StyleBox["(2.7)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nJuntando tudo, tenho ent\[ATilde]o uma EDO ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["\[DifferentialD]", 
+      RowBox[{"\[DifferentialD]", "t"}]], 
+     RowBox[{
+      OverscriptBox["u", "~"], "(", 
+      RowBox[{"k", ",", "t"}], ")"}]}], " ", "="}], TraditionalForm]],
+  ExpressionUUID->"a995a480-8ea9-455e-8f58-76baa1e2bd4a"],
+ "  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{"m\.b2", "+", " ", "k\.b2"}], ")"}]}], 
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "t"}], ")"}], " "}], TraditionalForm]],ExpressionUUID->
+  "16af0904-523c-4055-9a6f-6237cf6dab7d"],
+ StyleBox["(2.8)",
+  FontColor->RGBColor[1, 0, 0]],
+ ".  Solucionando essa EDO, tenho:\n\[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[DifferentialD]", 
+      RowBox[{
+       OverscriptBox["u", "~"], "(", 
+       RowBox[{"k", ",", "t"}], ")"}]}], 
+     RowBox[{
+      OverscriptBox["u", "~"], "(", 
+      RowBox[{"k", ",", "t"}], ")"}]], " ", "="}], TraditionalForm]],
+  ExpressionUUID->"bdd86927-7817-406a-a64d-2a2ea5dd7fee"],
+ "  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{"m\.b2", "+", " ", "k\.b2"}], ")"}]}], 
+    RowBox[{"\[DifferentialD]", "t", " "}]}], TraditionalForm]],
+  ExpressionUUID->"96c2fb8c-a119-419c-a1ea-8f907e2d65b6"],
+ " \[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{
+       OverscriptBox["u", "~"], "(", 
+       RowBox[{"k", ",", "0"}], ")"}], 
+      RowBox[{
+       OverscriptBox["u", "~"], "(", 
+       RowBox[{"k", ",", "t"}], ")"}]], 
+     FractionBox[
+      RowBox[{"\[DifferentialD]", 
+       RowBox[{
+        OverscriptBox["u", "~"], "(", 
+        RowBox[{"k", ",", "t"}], ")"}]}], 
+      RowBox[{
+       OverscriptBox["u", "~"], "(", 
+       RowBox[{"k", ",", "t"}], ")"}]]}], "=", " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", "0", "t"], 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"m\.b2", "+", " ", "k\.b2"}], ")"}]}], 
+      RowBox[{"\[DifferentialD]", "t"}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b3af0197-e57a-4ef6-bb25-ae94c98e62b8"],
+ " \[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"ln", "(", 
+     FractionBox[
+      RowBox[{
+       OverscriptBox["u", "~"], "(", 
+       RowBox[{"k", ",", "t"}], ")"}], 
+      RowBox[{
+       OverscriptBox["u", "~"], "(", 
+       RowBox[{"k", ",", "0"}], ")"}]], ")"}], "=", " ", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"(", 
+       RowBox[{"m\.b2", "+", " ", "k\.b2"}], ")"}]}], "t"}]}], 
+   TraditionalForm]],ExpressionUUID->"16f10ce4-833a-4eb7-a1bb-8139db5fb4b5"],
+ " \[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "t"}], ")"}], "=", 
+    RowBox[{
+     RowBox[{
+      OverscriptBox["u", "~"], "(", 
+      RowBox[{"k", ",", "0"}], ")"}], 
+     SuperscriptBox["\[ScriptE]", 
+      RowBox[{" ", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{"m\.b2", "+", " ", "k\.b2"}], ")"}]}], "t"}]}]]}]}], 
+   TraditionalForm]],ExpressionUUID->"120051a9-5d5b-445a-a65c-5a29e925142e"],
+ " ",
+ StyleBox["(2.9)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nVimos nas notas de aula que a Transformada de Fourier para a condi\
+\[CCedilla]\[ATilde]o inicial ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Delta]", "(", 
+    RowBox[{"x", "-", 
+     SubscriptBox["x", "0"]}], ")"}], TraditionalForm]],ExpressionUUID->
+  "a5ff9b87-4b56-4706-a269-3956cbbb64a9"],
+ " \[EAcute]: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "0"}], ")"}], "=", 
+    FractionBox[
+     SuperscriptBox["\[ScriptE]", 
+      RowBox[{" ", 
+       RowBox[{"-", 
+        SubscriptBox["\[ImaginaryI]kx", "0"]}]}]], 
+     SqrtBox[
+      RowBox[{"2", "\[Pi]"}]]]}], TraditionalForm]],ExpressionUUID->
+  "36b2e705-848b-4894-8d12-59f6497b200e"],
+ StyleBox["(2.10)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Portanto, tenho que: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "t"}], ")"}], "=", 
+    FractionBox[
+     SuperscriptBox["\[ScriptE]", 
+      RowBox[{" ", 
+       RowBox[{
+        RowBox[{"-", 
+         SubscriptBox["\[ImaginaryI]kx", "0"]}], "-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"m\.b2", "+", " ", "k\.b2"}], ")"}], "t"}]}]}]], 
+     SqrtBox[
+      RowBox[{"2", "\[Pi]"}]]]}], TraditionalForm]],ExpressionUUID->
+  "77b94c1c-0388-42a7-96f4-1eb9d48f6e6d"],
+ " ",
+ StyleBox["(2.11)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Aplicarei agora a Inversa de Fourier para voltar para o nosso espa\
+\[CCedilla]o. Com isso tenho que:\n\[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"u", "(", 
+     RowBox[{"x", ",", "t"}], ")"}], "=", " ", 
+    RowBox[{
+     FractionBox["1", 
+      SqrtBox[
+       RowBox[{"2", "\[Pi]"}]]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{
+        OverscriptBox["u", "~"], "(", 
+        RowBox[{"k", ",", "t"}], ")"}], 
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{"-", "\[ImaginaryI]kx"}]], 
+       RowBox[{"\[DifferentialD]", "k"}]}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "88b5f25e-a03f-4717-af72-979b4eba66c9"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{" ", "1"}], 
+     RowBox[{"2", "\[Pi]"}]], 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{" ", 
+        RowBox[{
+         RowBox[{"-", 
+          RowBox[{"\[ImaginaryI]k", "(", 
+           RowBox[{"x", "-", 
+            SubscriptBox["x", "0"]}], ")"}]}], "-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"m\.b2", "+", " ", "k\.b2"}], ")"}], "t"}]}]}]], 
+      RowBox[{"\[DifferentialD]", "k"}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "314f8280-788a-45ee-8543-1532a38d0b04"],
+ " ",
+ StyleBox["(2.12)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", vou usar o Mathematica para calcular essa integral:"
+}], "Subsubsection",
+ CellChangeTimes->{{3.8103893220947523`*^9, 3.8103893390909977`*^9}, {
+   3.8103893709655867`*^9, 3.810389380603992*^9}, {3.810389525416975*^9, 
+   3.810390020103847*^9}, {3.8103900647271748`*^9, 3.810390127035472*^9}, 
+   3.814796605649972*^9, {3.814871587104404*^9, 3.814871904606698*^9}, {
+   3.8148719347510033`*^9, 3.814872511367653*^9}, {3.814872629223463*^9, 
+   3.8148728963901243`*^9}, {3.8148729468721943`*^9, 3.814872964499683*^9}, {
+   3.814873037402278*^9, 3.814873316727003*^9}, {3.814875080399764*^9, 
+   3.8148752255841627`*^9}, {3.814875260436035*^9, 3.814875327673468*^9}, {
+   3.814880114068524*^9, 3.814880209729108*^9}},
+ FontColor->GrayLevel[
+  0],ExpressionUUID->"03abc564-b388-4a12-9fec-7aedd2d33b2b"],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], "*", 
+       RowBox[{"(", 
+        RowBox[{"x", "-", 
+         SubscriptBox["x", "0"]}], ")"}]}], "-", 
+      RowBox[{"t", "*", 
+       SuperscriptBox["m", "2"]}], "-", 
+      RowBox[{"t", "*", " ", 
+       SuperscriptBox["k", "2"]}]}], "]"}], 
+    RowBox[{"2", "\[Pi]"}]], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", " ", 
+     RowBox[{"-", "\[Infinity]"}], ",", " ", "\[Infinity]"}], "}"}]}], " ", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.814875331933463*^9, 3.814875342504057*^9}, {
+  3.814875389725979*^9, 3.814875470267775*^9}, {3.8148755035458*^9, 
+  3.814875549650525*^9}, {3.814875585371181*^9, 3.814875633573267*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"0db669d7-b125-4e51-a6cd-0985e4447d3a"],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"ConditionalExpression", "[", 
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         SuperscriptBox["m", "2"]}], " ", "t"}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "x"}], "+", 
+       RowBox[{"\[ImaginaryI]", " ", 
+        SubscriptBox["x", "0"]}]}]], 
+     RowBox[{"2", " ", 
+      SqrtBox["\[Pi]"], " ", 
+      SqrtBox["t"]}]], ",", 
+    RowBox[{
+     RowBox[{"Re", "[", "t", "]"}], ">", "0"}]}], "]"}],
+  Background->RGBColor[1, 1, 0]]], "Input",
+ CellChangeTimes->{3.814880526731138*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"9dc89bd7-a76b-4ebf-9f0b-961cdd32db72"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3.", "Section",
+ CellChangeTimes->{{3.807387367161895*^9, 3.807387368881872*^9}, {
+   3.807439797431518*^9, 3.807439799004826*^9}, {3.8096297941918488`*^9, 
+   3.809629796313425*^9}, 
+   3.814796600540925*^9},ExpressionUUID->"7c7ae08b-b4df-4f9b-8e38-\
+662545fd0355"],
+
+Cell[TextData[{
+ "Considerarei o problema de Cauchy para a equa\[CCedilla]\[ATilde]o de onda, \
+onde obterei a solu\[CCedilla]\[ATilde]o de D\[CloseCurlyQuote]Alembert para \
+a equa\[CCedilla]\[ATilde]o de onda, com as seguintes condi\[CCedilla]\
+\[OTilde]es: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["u", "tt"], "=", 
+    SubscriptBox["c\.b2u", "xx"]}], TraditionalForm]],ExpressionUUID->
+  "296e4164-afa2-40c3-b38f-6531b52b04bd"],
+ " ",
+ StyleBox["(3.1)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"u", "(", 
+     RowBox[{"x", ",", "0"}], ")"}], "=", 
+    RowBox[{"\[ScriptF]", "(", "x", ")"}]}], TraditionalForm]],ExpressionUUID->
+  "d58bbd3e-0ba3-4982-9235-86d54821fe83"],
+ " ",
+ StyleBox["(3.2)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["u", "t"], "(", 
+     RowBox[{"x", ",", "0"}], ")"}], "=", "0"}], TraditionalForm]],
+  ExpressionUUID->"12e9c730-5186-4e6e-b526-46196825c310"],
+ " ",
+ StyleBox["(3.3)",
+  FontColor->RGBColor[1, 0, 0]],
+ ",  com \[ScriptF](x) uma fun\[CCedilla]\[ATilde]o arbitr\[AAcute]ria, \
+definida em x \[Element] \[DoubleStruckCapitalR]. Vou utilizar a Transformada \
+de Fourier para obter a solu\[CCedilla]\[ATilde]o.\n\[RightArrow]  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "x"}], 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]"}]]], " ", 
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{"-", "\[ImaginaryI]kx"}]], 
+      SubscriptBox["u", "tt"]}]}], "=", 
+    RowBox[{"c\.b2", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[DifferentialD]", "x"}], 
+        SqrtBox[
+         RowBox[{"2", "\[Pi]"}]]], " ", 
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{"-", "\[ImaginaryI]kx"}]], 
+       SubscriptBox["u", "xx"]}]}]}]}], TraditionalForm]],ExpressionUUID->
+  "08c0bd76-336f-4851-8aaa-108637f44fa0"],
+ " \[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "x"}], 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]"}]]], " ", 
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{"-", "\[ImaginaryI]kx"}]], 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[DifferentialD]", "\.b2"}], 
+        RowBox[{"\[DifferentialD]", "t\.b2"}]], "u"}]}]}], "=", 
+    RowBox[{"c\.b2", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[DifferentialD]", "x"}], 
+        SqrtBox[
+         RowBox[{"2", "\[Pi]"}]]], " ", 
+       RowBox[{
+        SuperscriptBox["\[ScriptE]", 
+         RowBox[{"-", "\[ImaginaryI]kx"}]], "(", "\[ImaginaryI]k", ")"}], 
+       "\.b2u"}]}]}]}], TraditionalForm]],ExpressionUUID->
+  "531344df-166c-4a7f-99ea-67a9407e23e5"],
+ " \[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[DifferentialD]", "\.b2"}], 
+      RowBox[{"\[DifferentialD]", "t\.b2"}]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[DifferentialD]", "x"}], 
+        SqrtBox[
+         RowBox[{"2", "\[Pi]"}]]], " ", 
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{"-", "\[ImaginaryI]kx"}]], "u"}]}]}], "=", 
+    RowBox[{
+     RowBox[{"-", "c\.b2k\.b2"}], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[DifferentialD]", "x"}], 
+        SqrtBox[
+         RowBox[{"2", "\[Pi]"}]]], " ", 
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{"-", "\[ImaginaryI]kx"}]], "u"}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"00ec1b4b-794c-4e4a-8995-cd305e455b09"],
+ "  \[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[DifferentialD]", "\.b2"}], 
+      RowBox[{"\[DifferentialD]", "t\.b2"}]], 
+     RowBox[{
+      OverscriptBox["u", "~"], "(", 
+      RowBox[{"k", ",", "t"}], ")"}]}], "=", 
+    RowBox[{
+     RowBox[{"-", "c\.b2k\.b2"}], 
+     RowBox[{
+      OverscriptBox["u", "~"], "(", 
+      RowBox[{"k", ",", "t"}], ")"}]}]}], TraditionalForm]],ExpressionUUID->
+  "b61d168a-3c44-47c0-a673-860c14939f17"],
+ " ",
+ StyleBox["(3.4)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nAssim, eu chego em uma EDO a qual a solu\[CCedilla]\[ATilde]o j\[AAcute] \
+conhecemos das aulas passadas. Com isso, nossa solu\[CCedilla]\[ATilde]o para \
+Transformada de Fourier \[EAcute]: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "t"}], ")"}], "=", 
+    RowBox[{
+     RowBox[{"Acos", "(", "ckt", ")"}], " ", "+", " ", 
+     RowBox[{"Bsen", "(", "ckt", ")"}]}]}], TraditionalForm]],ExpressionUUID->
+  "11def597-caa9-4e19-a51b-833fa24b9e0f"],
+ " ",
+ StyleBox["(3.5)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", onde o valor dessas constantes podem ser obtidas das condi\[CCedilla]\
+\[OTilde]es iniciais. Com isso, tenho:\n\[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "0"}], ")"}], "=", 
+    RowBox[{"A", "=", " ", 
+     RowBox[{
+      OverscriptBox["\[ScriptF]", "~"], " ", 
+      RowBox[{"(", "k", ")"}]}]}]}], TraditionalForm]],ExpressionUUID->
+  "42d986cd-b51f-45c1-8882-17e82303959b"],
+ " ",
+ StyleBox["(3.6)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox[
+      OverscriptBox["u", "~"], "t"], "(", 
+     RowBox[{"k", ",", "t"}], ")"}], "=", 
+    RowBox[{
+     RowBox[{"Bcos", "(", "ckt", ")"}], " ", "-", 
+     RowBox[{"Asen", "(", "ckt", ")"}]}]}], TraditionalForm]],ExpressionUUID->
+  "520815f3-990d-4246-97a0-a5d1b627a94e"],
+ " \[RightArrow]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox[
+      OverscriptBox["u", "~"], "t"], "(", 
+     RowBox[{"k", ",", "0"}], ")"}], "=", 
+    RowBox[{"B", " ", "=", "0"}]}], TraditionalForm]],ExpressionUUID->
+  "c0b5738b-8f6c-4f37-b6fc-ef0b334b409f"],
+ " ",
+ StyleBox["(3.7)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nAssim, eu tenho que ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox["u", "~"], "(", 
+     RowBox[{"k", ",", "t"}], ")"}], "=", 
+    RowBox[{
+     OverscriptBox["\[ScriptF]", "~"], " ", 
+     RowBox[{"(", "k", ")"}], 
+     RowBox[{"cos", "(", "ckt", ")"}], " "}]}], TraditionalForm]],
+  ExpressionUUID->"104adbf6-f79d-4d2d-9630-819b16e8e1f8"],
+ StyleBox["(3.8)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Para voltarmos para o nosso espa\[CCedilla]o, utilizarei o teorema da \
+Convolu\[CCedilla]\[ATilde]o, que diz:\n\[ScriptCapitalF][\[ScriptF] *\
+\[ScriptG]] = ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["\[ScriptF]", "~"], TraditionalForm]],ExpressionUUID->
+  "87adada6-dc24-40b5-a05d-6a0ecad92469"],
+ "*",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["\[ScriptG]", 
+    RowBox[{"~", " "}]], TraditionalForm]],ExpressionUUID->
+  "38608c22-a867-4cc2-ac60-1a9e79bf0d21"],
+ " ",
+ StyleBox["(3.9)",
+  FontColor->RGBColor[1, 0, 0]],
+ " e \[ScriptF] *\[ScriptG] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"=", 
+    SuperscriptBox["\[ScriptCapitalF]", 
+     RowBox[{"-", "1"}]]}], TraditionalForm]],ExpressionUUID->
+  "ed26ef63-37a2-4a7c-8850-8e2eb1ce63e4"],
+ "[ ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["\[ScriptF]", "~"], TraditionalForm]],ExpressionUUID->
+  "3f34d50f-1347-476a-88c0-f162ae86c050"],
+ "*",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["\[ScriptG]", 
+    RowBox[{"~", " "}]], TraditionalForm]],ExpressionUUID->
+  "6eab2977-38a8-48de-a857-a0ca2c97d9b6"],
+ "] ",
+ StyleBox["(3.10)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Disso, eu tiro que ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"u", "(", 
+     RowBox[{"x", ",", "t"}], ")"}], "=", 
+    RowBox[{
+     RowBox[{"\[ScriptF]", "(", "x", ")"}], 
+     RowBox[{
+      SuperscriptBox["\[ScriptCapitalF]", 
+       RowBox[{"-", "1"}]], "[", 
+      RowBox[{"cos", "(", "ckt", ")"}], "]"}]}]}], TraditionalForm]],
+  ExpressionUUID->"70e0976e-e247-47f7-a289-49df9008088d"],
+ " ",
+ StyleBox["(3.11)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Calcularemos ent\[ATilde]o a Transformada de Fourier Inversa de cos(ckt):\
+\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["\[ScriptCapitalF]", 
+      RowBox[{"-", "1"}]], "[", 
+     RowBox[{"cos", "(", "ckt", ")"}], "]"}], " ", "=", "  ", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"2", "\[Pi]"}]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{"\[DifferentialD]", "x"}], " ", 
+       SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], 
+       RowBox[{"cos", "(", "ckt", ")"}], " "}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"ef40cabf-a6c4-4a44-b703-ace32e907ea0"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"2", "\[Pi]"}]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{"\[DifferentialD]", "x"}], " ", 
+       FractionBox[
+        SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kx"], "2"], 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kct"], "+", " ", 
+         SuperscriptBox["\[ScriptE]", 
+          RowBox[{"-", "\[ImaginaryI]kct"}]]}], ")"}], " "}]}]}]}], 
+   TraditionalForm]],ExpressionUUID->"f402368d-7f29-44f6-8073-45f5bb3894db"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"2", "\[Pi]"}]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{"\[DifferentialD]", "x"}], " ", 
+       FractionBox["1", "2"], 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["\[ScriptE]", 
+          RowBox[{"\[ImaginaryI]k", "(", 
+           RowBox[{"x", "+", "ct"}], ")"}]], "+", " ", 
+         SuperscriptBox["\[ScriptE]", 
+          RowBox[{"\[ImaginaryI]k", "(", 
+           RowBox[{"x", "-", "ct"}], ")"}]]}], ")"}], " "}]}]}]}], 
+   TraditionalForm]],ExpressionUUID->"69423679-7669-462d-8ac6-2554e8f09184"],
+ StyleBox["(3.12)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nPodemos observar que a solu\[CCedilla]\[ATilde]o dessas integrais, que s\
+\[ATilde]o a representa\[CCedilla]\[ATilde]o integral da fun\[CCedilla]\
+\[ATilde]o de Heaviside:",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{"\[DifferentialD]", "x"}], " ", 
+       FractionBox[
+        SuperscriptBox["\[ScriptE]", 
+         RowBox[{"\[ImaginaryI]k", "(", 
+          RowBox[{"x", "-", "y"}], ")"}]], 
+        RowBox[{"2", "\[Pi]"}]]}]}], "=", 
+     RowBox[{"\[Delta]", "(", 
+      RowBox[{"x", "-", "y"}], ")"}], " "}]}], TraditionalForm]],
+  ExpressionUUID->"b6601599-d5cf-412d-b7ee-7464dbdd0aa0"],
+ StyleBox["(3.13)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\[RightTeeArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{"\[DifferentialD]", "x"}], " ", 
+       FractionBox[
+        SuperscriptBox["\[ScriptE]", 
+         RowBox[{"\[ImaginaryI]k", "(", 
+          RowBox[{"x", "-", "ct"}], ")"}]], 
+        RowBox[{"2", "\[Pi]"}]]}]}], "=", 
+     RowBox[{"\[Delta]", "(", 
+      RowBox[{"x", "-", "ct"}], ")"}], " "}]}], TraditionalForm]],
+  ExpressionUUID->"8d09721a-6148-4532-83a8-cc9ed6bcb20f"],
+ StyleBox["(3.14)",
+  FontColor->RGBColor[1, 0, 0]],
+ " \t\[RightTeeArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{"\[DifferentialD]", "x"}], " ", 
+       FractionBox[
+        SuperscriptBox["\[ScriptE]", 
+         RowBox[{"\[ImaginaryI]k", "(", 
+          RowBox[{"x", "+", "ct"}], ")"}]], 
+        RowBox[{"2", "\[Pi]"}]]}]}], "=", 
+     RowBox[{"\[Delta]", "(", 
+      RowBox[{"x", "+", "ct"}], ")"}], " "}]}], TraditionalForm]],
+  ExpressionUUID->"efe9ae08-13c2-4d47-8a27-da9de299e41a"],
+ StyleBox["(3.15)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nAssim, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["\[ScriptCapitalF]", 
+      RowBox[{"-", "1"}]], "[", 
+     RowBox[{"cos", "(", "ckt", ")"}], "]"}], " ", "=", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"\[Delta]", "(", 
+       RowBox[{"x", "-", "ct"}], ")"}], " ", "+", " ", 
+      RowBox[{"\[Delta]", "(", 
+       RowBox[{"x", "+", "ct"}], ")"}]}], "2"]}], TraditionalForm]],
+  ExpressionUUID->"27c68a5d-7a7e-4a55-b924-3bdd804b48c8"],
+ " ",
+ StyleBox["(3.16)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nDisso, eu tenho que: ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{
+     RowBox[{"u", "(", 
+      RowBox[{"x", ",", "t"}], ")"}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[ScriptF]", "(", "x", ")"}], 
+       RowBox[{
+        SuperscriptBox["\[ScriptCapitalF]", 
+         RowBox[{"-", "1"}]], "[", 
+        RowBox[{"cos", "(", "ckt", ")"}], "]"}]}], "=", " ", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"\[ScriptF]", "(", 
+         RowBox[{"x", "-", "ct"}], ")"}], " ", "+", " ", 
+        RowBox[{"\[ScriptF]", "(", 
+         RowBox[{"x", "+", "ct"}], ")"}]}], "2"]}]}],
+    Background->RGBColor[1, 1, 0]], TraditionalForm]],ExpressionUUID->
+  "00bb1963-a9bc-4d30-8251-8389effc7a8a"],
+ " ",
+ StyleBox["(3.17)",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Subsubsection",
+ CellChangeTimes->{{3.8103901486088448`*^9, 3.810390441503147*^9}, {
+   3.810390476470316*^9, 3.810390559703246*^9}, {3.810390644962154*^9, 
+   3.810391309008903*^9}, {3.810391343757482*^9, 3.810391598125629*^9}, {
+   3.810391629514831*^9, 3.810391780546974*^9}, 3.814796609062756*^9, {
+   3.8148759141608543`*^9, 3.814876058652397*^9}, 3.814876393686358*^9, {
+   3.81487643816296*^9, 3.814876496674415*^9}, {3.8148765271298847`*^9, 
+   3.8148766408037643`*^9}, {3.814876673655604*^9, 3.814876691829661*^9}, {
+   3.814876740125821*^9, 3.814876780190441*^9}, {3.8148768127665052`*^9, 
+   3.814877468005274*^9}, {3.814877524111725*^9, 3.8148775368062468`*^9}, {
+   3.814877569643529*^9, 3.8148776043749857`*^9}, {3.814877635795939*^9, 
+   3.814877878072178*^9}, {3.814877930360195*^9, 3.8148780610898314`*^9}, {
+   3.8148781131211233`*^9, 3.814878196340334*^9}, {3.814879127007346*^9, 
+   3.8148791879766703`*^9}, {3.8148792266365337`*^9, 3.814879504948658*^9}, {
+   3.8148795388988867`*^9, 3.814879590983089*^9}, {3.814879633097928*^9, 
+   3.814879781997018*^9}, {3.8148802334696217`*^9, 3.814880380938313*^9}},
+ FontColor->GrayLevel[
+  0],ExpressionUUID->"3629ae4a-290f-4036-8ca1-68ab57b87837"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.a)", "Section",
+ CellChangeTimes->{{3.807387367161895*^9, 3.807387368881872*^9}, {
+   3.807439797431518*^9, 3.807439799004826*^9}, {3.809629828479398*^9, 
+   3.8096298311741247`*^9}, 3.814796689206822*^9, {3.814866341842204*^9, 
+   3.814866342653624*^9}},ExpressionUUID->"b70f980c-9527-4835-ad96-\
+9f8f996904d4"],
+
+Cell[TextData[{
+ "Nesse exerc\[IAcute]cio, considerarei uma part\[IAcute]cula qu\[AHat]ntica \
+em uma dimens\[ATilde]o, no estado ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Psi]", "(", "x", ")"}], "=", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {
+           RowBox[{"A", "(", 
+            RowBox[{"a\.b2", "-", "x\.b2"}], ")"}], 
+           RowBox[{",", " ", 
+            RowBox[{
+             RowBox[{"-", "a"}], " ", "\[LessEqual]", " ", "x", " ", 
+             "\[LessEqual]", " ", "a"}]}]},
+          {"0", 
+           RowBox[{",", " ", 
+            RowBox[{"caso", " ", "contr\[AAcute]rio"}]}]}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+         GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False]}], TraditionalForm]],ExpressionUUID->
+  "e2c9b8f4-9266-4f89-911c-153e41d55718"],
+ "  ",
+ StyleBox["(4.1)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", onde a>0.\n Vou encontrar a constante A a partir da normaliza\[CCedilla]\
+\[ATilde]o da fun\[CCedilla]\[ATilde]o de onda. Assim,\n \[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{"|", 
+      RowBox[{"\[Psi]", "(", "x", ")"}], "|", 
+      RowBox[{"\.b2", 
+       RowBox[{"\[DifferentialD]", "x"}]}]}]}], " ", "=", " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "a"}], "a"], 
+     RowBox[{
+      RowBox[{"A", "(", 
+       RowBox[{"a\.b2", "-", "x\.b2"}], ")"}], 
+      RowBox[{"\[DifferentialD]", "x", " "}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"4c4c5e30-59a7-47b2-8fb9-1f2fa9c1d071"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    SubsuperscriptBox[
+     RowBox[{"A", "[", 
+      RowBox[{"a\.b2x", "-", 
+       FractionBox["x\.b3", "3"]}], "]"}], 
+     RowBox[{"-", "a"}], "a"]}], TraditionalForm]],ExpressionUUID->
+  "fac74ab8-f811-45f4-a668-dc377e0bb389"],
+ "= ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["Aa", "3"], 
+    FractionBox["4", "3"]}], TraditionalForm]],ExpressionUUID->
+  "b2443f4c-a150-4e7d-9a7f-53f7e1e3e9a3"],
+ "= 1. Portanto, ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"A", "=", 
+     FractionBox["3", 
+      RowBox[{"4", "a\.b3"}]]}],
+    Background->RGBColor[1, 1, 0]], TraditionalForm]],ExpressionUUID->
+  "03755188-6f76-4235-8b7a-4d5799b94e9c"],
+ " ",
+ StyleBox["(4.2)",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Subsubsection",
+ CellChangeTimes->{{3.810396423266426*^9, 3.810396469684733*^9}, {
+   3.810396655571765*^9, 3.810396657661921*^9}, {3.81039762522112*^9, 
+   3.810397664290758*^9}, {3.81039770153511*^9, 3.810397703638095*^9}, {
+   3.8103977602216673`*^9, 3.810397847646151*^9}, {3.810397902791904*^9, 
+   3.810397953806753*^9}, {3.810398027152087*^9, 3.810398085424061*^9}, {
+   3.8103995221545353`*^9, 3.81039952373342*^9}, {3.810479331508461*^9, 
+   3.810479341581715*^9}, {3.81048040063941*^9, 3.810480419555509*^9}, {
+   3.810480495796335*^9, 3.8104806904454947`*^9}, 3.814796685411894*^9, {
+   3.814899377005137*^9, 3.8148994111087303`*^9}, {3.814904323084919*^9, 
+   3.814904461737976*^9}, {3.814904492333968*^9, 3.814904511287024*^9}, {
+   3.81490455126269*^9, 3.81490478946495*^9}, {3.814958427955966*^9, 
+   3.814958447807128*^9}},
+ FontColor->GrayLevel[
+  0],ExpressionUUID->"f9c52f08-6b12-41be-ab4d-2b0448c54a5e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.b)", "Section",
+ CellChangeTimes->{{3.807387367161895*^9, 3.807387368881872*^9}, {
+   3.807439797431518*^9, 3.807439799004826*^9}, {3.809629828479398*^9, 
+   3.8096298311741247`*^9}, 3.814796689206822*^9, {3.814866345001457*^9, 
+   3.814866345523946*^9}},ExpressionUUID->"b5b7f2b2-51d1-48a9-a008-\
+da6f7f3d16b4"],
+
+Cell[TextData[{
+ "Nessa quest\[ATilde]o, calcularei agora a m\[EAcute]dia do momento \
+\[LeftAngleBracket]p\[RightAngleBracket], para ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "=", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]\[HBar]"}], 
+     SubscriptBox["\[PartialD]", "x"]}]}], TraditionalForm]],ExpressionUUID->
+  "add7f2d9-3e04-450e-92f1-1a5eda4f02f0"],
+ ", e a m\[EAcute]dia da posi\[CCedilla]\[ATilde]o \[LeftAngleBracket]x\
+\[RightAngleBracket].\n\[RightArrow] Calculando \[LeftAngleBracket]x\
+\[RightAngleBracket]:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[LeftAngleBracket]", "x", "\[RightAngleBracket]"}], "=", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], "x"}], "|", 
+     RowBox[{"\[Psi]", "(", "x", ")"}], "|", 
+     RowBox[{"\.b2", 
+      RowBox[{"\[DifferentialD]", "x"}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"f136c64b-f051-433b-9d5b-fbab0e352a7e"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", 
+     RowBox[{"-", "a"}], "a"], 
+    RowBox[{
+     FractionBox["3", 
+      RowBox[{"4", "a\.b3"}]], 
+     RowBox[{"(", 
+      RowBox[{"a\.b2x", "-", "x\.b3"}], ")"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], TraditionalForm]],ExpressionUUID->
+  "2e85d0c6-21c9-4922-be2f-01d295a54ec9"],
+ " =  ",
+ Cell[BoxData[
+  FormBox[
+   SubsuperscriptBox[
+    RowBox[{
+     FractionBox["3", 
+      RowBox[{"4", "a\.b3"}]], "[", 
+     RowBox[{
+      RowBox[{"a\.b2", 
+       FractionBox["x\.b2", "2"]}], "-", 
+      FractionBox[
+       SuperscriptBox["x", "4"], "4"]}], "]"}], 
+    RowBox[{"-", "a"}], "a"], TraditionalForm]],ExpressionUUID->
+  "d1476c1a-bd16-4593-818c-4cc4584921f3"],
+ "= 0 \[Implies]",
+ StyleBox[" \[LeftAngleBracket]x\[RightAngleBracket] = 0 ",
+  Background->RGBColor[1, 1, 0]],
+ " ",
+ StyleBox["(4.3)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\[RightArrow] Calculando \[LeftAngleBracket]p\[RightAngleBracket]: Antes \
+de come\[CCedilla]ar a calculo, vou calcular a derivada por x de \[Psi]. Al\
+\[EAcute]m disso, como \[Psi] \[EAcute] uma fun\[CCedilla]\[ATilde]o real ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[Psi]", "*"], "=", "\[Psi]"}], TraditionalForm]],
+  ExpressionUUID->"4eaded96-0290-4e13-95fd-59443bca9446"],
+ "\n\[RightTeeArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["\[PartialD]", 
+      RowBox[{"\[PartialD]", "x"}]], "\[Psi]"}], "=", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {
+           RowBox[{"-", 
+            FractionBox[
+             RowBox[{"3", "x"}], 
+             RowBox[{"2", "a\.b3"}]]}], 
+           RowBox[{",", " ", 
+            RowBox[{
+             RowBox[{"-", "a"}], " ", "\[LessEqual]", " ", "x", " ", 
+             "\[LessEqual]", " ", "a"}]}]},
+          {"0", 
+           RowBox[{",", " ", 
+            RowBox[{"caso", " ", "contr\[AAcute]rio"}]}]}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+         GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False]}], TraditionalForm]],ExpressionUUID->
+  "a157acd6-ae54-43be-8eff-15af4a218a09"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[LeftAngleBracket]", "p", "\[RightAngleBracket]"}], "=", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]\[HBar]"}], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       SuperscriptBox["\[Psi]", "*"], 
+       RowBox[{
+        FractionBox["\[PartialD]", 
+         RowBox[{"\[PartialD]", "x"}]], "\[Psi]"}], 
+       RowBox[{"\[DifferentialD]", "x"}]}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"1985e50d-a284-490e-868f-b9850e6ebf50"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[ImaginaryI]\[HBar]", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "a"}], "a"], 
+     RowBox[{
+      FractionBox["9", 
+       RowBox[{"8", 
+        SuperscriptBox["a", "6"]}]], 
+      RowBox[{"(", 
+       RowBox[{"a\.b2x", "-", "x\.b3"}], ")"}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"06aa125e-c8d9-4252-b77e-ac5880ccdd9a"],
+ " =  ",
+ Cell[BoxData[
+  FormBox[
+   SubsuperscriptBox[
+    RowBox[{
+     FractionBox[
+      RowBox[{"9", "\[ImaginaryI]\[HBar]"}], 
+      RowBox[{"8", 
+       SuperscriptBox["a", "6"]}]], "[", 
+     RowBox[{
+      RowBox[{"a\.b2", 
+       FractionBox["x\.b2", "2"]}], "-", 
+      FractionBox[
+       SuperscriptBox["x", "4"], "4"]}], "]"}], 
+    RowBox[{"-", "a"}], "a"], TraditionalForm]],ExpressionUUID->
+  "cb2ccb7f-3cee-413a-9c89-4a7a8bca2f70"],
+ " = 0  \[Implies]",
+ StyleBox[" \[LeftAngleBracket]p\[RightAngleBracket] = 0 ",
+  Background->RGBColor[1, 1, 0]],
+ " ",
+ StyleBox["(4.4)",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Subsubsection",
+ CellChangeTimes->{{3.810396423266426*^9, 3.810396469684733*^9}, {
+   3.810396655571765*^9, 3.810396657661921*^9}, {3.81039762522112*^9, 
+   3.810397664290758*^9}, {3.81039770153511*^9, 3.810397703638095*^9}, {
+   3.8103977602216673`*^9, 3.810397847646151*^9}, {3.810397902791904*^9, 
+   3.810397953806753*^9}, {3.810398027152087*^9, 3.810398085424061*^9}, {
+   3.8103995221545353`*^9, 3.81039952373342*^9}, {3.810479331508461*^9, 
+   3.810479341581715*^9}, {3.81048040063941*^9, 3.810480419555509*^9}, {
+   3.810480495796335*^9, 3.8104806904454947`*^9}, 3.814796685411894*^9, {
+   3.814905155071466*^9, 3.8149051666516447`*^9}, {3.814905836350041*^9, 
+   3.8149058640448227`*^9}, {3.814906363452694*^9, 3.814906424330718*^9}, {
+   3.814906464849373*^9, 3.8149065105098457`*^9}, {3.814906549529241*^9, 
+   3.814906783497246*^9}, {3.814906816733971*^9, 3.814906871592306*^9}, {
+   3.814906914970213*^9, 3.814907211587837*^9}, {3.814907254629043*^9, 
+   3.8149073865275793`*^9}, {3.814907429689354*^9, 3.8149074386881104`*^9}, {
+   3.8149075230292664`*^9, 3.814907561113049*^9}, {3.814958267387116*^9, 
+   3.814958310316983*^9}, {3.8149584493792257`*^9, 3.8149585199967318`*^9}},
+ FontColor->GrayLevel[
+  0],ExpressionUUID->"40682715-1f83-4ffd-b4f9-c887b182d2f8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.c)", "Section",
+ CellChangeTimes->{{3.807387367161895*^9, 3.807387368881872*^9}, {
+   3.807439797431518*^9, 3.807439799004826*^9}, {3.809629828479398*^9, 
+   3.8096298311741247`*^9}, 3.814796689206822*^9, {3.814866347512591*^9, 
+   3.814866348028596*^9}},ExpressionUUID->"9441953c-a249-4696-b490-\
+08a1e55d4f80"],
+
+Cell[TextData[{
+ "Calcularei agora o segundo momento \[LeftAngleBracket]x\.b2\
+\[RightAngleBracket]  e a m\[EAcute]dia do momento ao quadrado \
+\[LeftAngleBracket]p\.b2\[RightAngleBracket], para assim calcular a vari\
+\[AHat]ncia da posi\[CCedilla]\[ATilde]o e do momento. \n\[RightArrow] \
+Calculando \[LeftAngleBracket]x\.b2\[RightAngleBracket]:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[LeftAngleBracket]", "x\.b2", "\[RightAngleBracket]"}], "=", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], "x\.b2"}], "|", 
+     RowBox[{"\[Psi]", "(", "x", ")"}], "|", 
+     RowBox[{"\.b2", 
+      RowBox[{"\[DifferentialD]", "x"}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"16521138-c715-4ab9-a62a-39cf15ee79b9"],
+ " =  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", 
+     RowBox[{"-", "a"}], "a"], 
+    RowBox[{
+     FractionBox["3", 
+      RowBox[{"4", "a\.b3"}]], 
+     RowBox[{"(", 
+      RowBox[{"a\.b2x\.b2", "-", 
+       SuperscriptBox["x", "4"]}], ")"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], TraditionalForm]],ExpressionUUID->
+  "ed2a2790-e102-4e1e-95eb-86e93ced8f80"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubsuperscriptBox[
+    RowBox[{
+     FractionBox["3", 
+      RowBox[{"4", "a\.b3"}]], "[", 
+     RowBox[{
+      RowBox[{"a\.b2", " ", 
+       FractionBox[
+        SuperscriptBox["x", "3"], "3"]}], "-", 
+      FractionBox[
+       SuperscriptBox["x", "5"], "5"]}], "]"}], 
+    RowBox[{"-", "a"}], "a"], TraditionalForm]],ExpressionUUID->
+  "4bb5ab24-325e-4ade-b4c3-94e876dbad12"],
+ "= ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["a\.b2", "5"], TraditionalForm]],ExpressionUUID->
+  "931a5e56-c238-489b-889b-99e766255c1e"],
+ " \[Implies]",
+ StyleBox["  ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[LeftAngleBracket]", "x\.b2", "\[RightAngleBracket]"}], " ", 
+    "=", " ", 
+    FractionBox["a\.b2", "5"]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "94a8ec00-42e7-45a3-8c2f-b71016f20ef1"],
+ "  ",
+ StyleBox["(4.5)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nAssim, a vari\[AHat]ncia da posi\[CCedilla]\[ATilde]o \[EAcute] dada por: \
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Sigma]", "x", "2"], " ", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[LeftAngleBracket]", "x\.b2", "\[RightAngleBracket]"}], " ", 
+      "-", " ", 
+      RowBox[{
+       RowBox[{"\[LeftAngleBracket]", "x", "\[RightAngleBracket]"}], 
+       "\.b2"}]}], " ", "=", " ", 
+     FractionBox["a\.b2", "5"], " "}]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "5c6f8c96-f688-4ed2-9a22-908b44e583d5"],
+ StyleBox["(4.6)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\[RightArrow] Calculando \[LeftAngleBracket]p\.b2\[RightAngleBracket]: \
+Antes de come\[CCedilla]ar esse calculo, vou calcular a derivada segunda por \
+x de \[Psi]. \n\[RightTeeArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[PartialD]", "\.b2"}], 
+      RowBox[{"\[PartialD]", "x\.b2"}]], "\[Psi]"}], "=", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {
+           RowBox[{"-", 
+            FractionBox["3", 
+             RowBox[{"2", "a\.b3"}]]}], 
+           RowBox[{",", " ", 
+            RowBox[{
+             RowBox[{"-", "a"}], " ", "\[LessEqual]", " ", "x", " ", 
+             "\[LessEqual]", " ", "a"}]}]},
+          {"0", 
+           RowBox[{",", " ", 
+            RowBox[{"caso", " ", "contr\[AAcute]rio"}]}]}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+         GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False]}], TraditionalForm]],ExpressionUUID->
+  "f3e2831d-67a6-4352-b90d-fb4e1b0dbb90"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[LeftAngleBracket]", "p\.b2", "\[RightAngleBracket]"}], "=", 
+    RowBox[{
+     RowBox[{"-", "\[HBar]\.b2"}], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       SuperscriptBox["\[Psi]", "*"], 
+       FractionBox[
+        RowBox[{"\[PartialD]", "\.b2"}], 
+        RowBox[{"\[PartialD]", "x\.b2"}]], "\[Psi]", 
+       RowBox[{"\[DifferentialD]", "x"}]}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"f271a5f0-3af7-48a1-a23d-6d9395088540"],
+ " =  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[HBar]\.b2", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "a"}], "a"], 
+     RowBox[{
+      FractionBox["9", 
+       RowBox[{"8", 
+        SuperscriptBox["a", "6"]}]], 
+      RowBox[{"(", 
+       RowBox[{"a\.b2", "-", 
+        SuperscriptBox["x", "2"]}], ")"}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"4716a514-0495-47cd-a578-35f7bb0ed7c7"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubsuperscriptBox[
+    RowBox[{
+     FractionBox["\[HBar]\.b29", 
+      RowBox[{"8", 
+       SuperscriptBox["a", "6"]}]], "[", 
+     RowBox[{
+      RowBox[{"a\.b2", " ", "x"}], "-", 
+      FractionBox[
+       SuperscriptBox["x", "3"], "3"]}], "]"}], 
+    RowBox[{"-", "a"}], "a"], TraditionalForm]],ExpressionUUID->
+  "b42bea51-161a-48e1-9895-e587b20b5ad3"],
+ "= ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"3", "\[HBar]\.b2"}], 
+    RowBox[{"2", " ", "a\.b3"}]], TraditionalForm]],ExpressionUUID->
+  "f4264f4d-3e43-4e41-8835-4af8a088312f"],
+ " \[Implies]",
+ StyleBox["  ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[LeftAngleBracket]", "p\.b2", "\[RightAngleBracket]"}], " ", 
+    "=", " ", 
+    FractionBox[
+     RowBox[{"3", "\[HBar]\.b2"}], 
+     RowBox[{"2", " ", "a\.b3"}]]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "99c7fde4-8530-450f-bbcf-03da7f755aa9"],
+ "  ",
+ StyleBox["(4.7)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nAssim, a vari\[AHat]ncia do momento \[EAcute] dada por:",
+ StyleBox[" ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox[
+     SubsuperscriptBox["\[Sigma]", "p", "2"],
+     Background->RGBColor[1, 1, 0]], 
+    StyleBox[" ",
+     Background->RGBColor[1, 1, 0]], 
+    StyleBox["=",
+     Background->RGBColor[1, 1, 0]], 
+    RowBox[{
+     StyleBox[
+      RowBox[{
+       RowBox[{"\[LeftAngleBracket]", "p\.b2", "\[RightAngleBracket]"}], " ", 
+       "-", " ", 
+       RowBox[{
+        RowBox[{"\[LeftAngleBracket]", "p", "\[RightAngleBracket]"}], 
+        "\.b2"}]}],
+      Background->RGBColor[1, 1, 0]], 
+     StyleBox[" ",
+      Background->RGBColor[1, 1, 0]], 
+     StyleBox["=",
+      Background->RGBColor[1, 1, 0]], 
+     StyleBox[" ",
+      Background->RGBColor[1, 1, 0]], 
+     StyleBox[
+      FormBox[
+       FractionBox[
+        RowBox[{"3", "\[HBar]\.b2"}], 
+        RowBox[{"2", " ", "a\.b3"}]],
+       TraditionalForm],
+      Background->RGBColor[1, 1, 0]], " "}]}], TraditionalForm]],
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "d455e475-5b3e-4b83-bd18-422ff912659f"],
+ StyleBox["(4.8)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nPor fim, o principio da incerteza nos diz que ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Sigma]", "x"], 
+     SubscriptBox["\[Sigma]", "p"]}], "\[GreaterEqual]", 
+    RowBox[{"\[HBar]", "/", "2"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "33d72dd2-30e4-4a7e-bf7e-4aafad725157"],
+ " \[Implies] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Sigma]", "x", "2"], 
+     SubsuperscriptBox["\[Sigma]", "p", "2"]}], "\[GreaterEqual]", 
+    RowBox[{"\[HBar]\.b2", "/", "4"}]}], TraditionalForm]],ExpressionUUID->
+  "165a4668-817d-4063-8e22-30abb50db4d3"],
+ " \[Implies] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"3", "\[HBar]\.b2"}], 
+      RowBox[{"2", " ", "a\.b3"}]], " ", 
+     FractionBox["a\.b2", "5"]}], " ", "\[GreaterEqual]", " ", 
+    RowBox[{"\[HBar]\.b2", "/", "4"}]}], TraditionalForm]],ExpressionUUID->
+  "323acc4d-c19a-40d0-8186-174f2a483e2a"],
+ " \[Implies] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"3", "\[HBar]\.b2"}], 
+     RowBox[{"10", " ", "a"}]], "  ", "\[GreaterEqual]", " ", 
+    RowBox[{"\[HBar]\.b2", "/", "4"}]}], TraditionalForm]],ExpressionUUID->
+  "197cedf9-a221-4a94-9d1e-9026da0a908f"],
+ ". Ou seja isso \[EAcute] satisfeito para ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "<", "a", " ", "<", 
+    RowBox[{"6", "/", "5"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d8a58807-e0fa-4844-bb86-ae9579fbf1eb"],
+ "."
+}], "Subsubsection",
+ CellChangeTimes->{{3.810396423266426*^9, 3.810396469684733*^9}, {
+   3.810396655571765*^9, 3.810396657661921*^9}, {3.81039762522112*^9, 
+   3.810397664290758*^9}, {3.81039770153511*^9, 3.810397703638095*^9}, {
+   3.8103977602216673`*^9, 3.810397847646151*^9}, {3.810397902791904*^9, 
+   3.810397953806753*^9}, {3.810398027152087*^9, 3.810398085424061*^9}, {
+   3.8103995221545353`*^9, 3.81039952373342*^9}, {3.810479331508461*^9, 
+   3.810479341581715*^9}, {3.81048040063941*^9, 3.810480419555509*^9}, {
+   3.810480495796335*^9, 3.8104806904454947`*^9}, 3.814796685411894*^9, {
+   3.8149086895755444`*^9, 3.814908693908147*^9}, {3.814908749049469*^9, 
+   3.814908852253867*^9}, {3.814908896945223*^9, 3.814908947880756*^9}, {
+   3.8149089802033243`*^9, 3.814909192735043*^9}, {3.814909227826611*^9, 
+   3.8149092278464203`*^9}, {3.8149092790755777`*^9, 
+   3.8149094097134457`*^9}, {3.8149095010058117`*^9, 3.814909588532311*^9}, {
+   3.814909624008629*^9, 3.8149097180428343`*^9}, {3.8149097848485203`*^9, 
+   3.8149098691357813`*^9}, {3.8149099143506327`*^9, 3.814909917844411*^9}, {
+   3.8149576224900723`*^9, 3.814957640716853*^9}, {3.814957989736595*^9, 
+   3.814958218107409*^9}, {3.814958339383786*^9, 3.8149583966293993`*^9}, {
+   3.81495852292163*^9, 3.814958592116412*^9}},
+ FontColor->GrayLevel[
+  0],ExpressionUUID->"168b5b60-ee42-4a15-94ce-30df198e702d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5.", "Section",
+ CellChangeTimes->{{3.807387367161895*^9, 3.807387368881872*^9}, {
+   3.807439797431518*^9, 3.807439799004826*^9}, {3.809629844081143*^9, 
+   3.8096298453965073`*^9}, 
+   3.8147966389205923`*^9},ExpressionUUID->"2753ebfc-ce81-41f2-9153-\
+46faef6c3676"],
+
+Cell[TextData[{
+ "Utilizarei a  transformada de Fourier para calcular a solu\[CCedilla]\
+\[ATilde]o da equa\[CCedilla]\[ATilde]o diferencial ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"\[Del]", "\.b2"}]}], " ", "+", " ", "m\.b2"}], ")"}], 
+     RowBox[{"G", "(", "\[DoubleStruckR]", ")"}]}], "=", " ", 
+    RowBox[{"\[Delta]", "(", "\[DoubleStruckR]", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a6c74306-17f3-467f-8024-bf371d5806ca"],
+ " ",
+ StyleBox["(5.1)",
+  FontColor->RGBColor[1, 0, 0]],
+ " e utilizarei alguns conceitos vistos em aula para facilitar o encontro da \
+solu\[CCedilla]\[ATilde]o.\n\[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"\[Del]", "\.b2"}]}], " ", "+", " ", "m\.b2"}], ")"}], 
+     RowBox[{"G", "(", "\[DoubleStruckR]", ")"}]}], "=", " ", 
+    RowBox[{"\[Delta]", "(", "\[DoubleStruckR]", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "aac39417-a6b6-4ecd-8ec6-ff97ba0528ee"],
+ " \[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"\[Del]", 
+       RowBox[{"\.b2G", "(", "\[DoubleStruckR]", ")"}]}]}], " ", "+", " ", 
+     RowBox[{"m\.b2G", "(", "\[DoubleStruckR]", ")"}]}], "=", " ", 
+    RowBox[{"\[Delta]", "(", "\[DoubleStruckR]", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3f641d03-f517-40eb-b3af-3d68459c4e9b"],
+ " \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        FractionBox[
+         RowBox[{"\[DifferentialD]", "\.b3\[DoubleStruckR]"}], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"2", "\[Pi]"}], ")"}], 
+          RowBox[{"3", "/", "2"}]]], " ", 
+        SuperscriptBox["\[ScriptE]", 
+         RowBox[{"-", 
+          RowBox[{
+          "\[ImaginaryI]\[DoubleStruckK]", ".", "\[DoubleStruckR]"}]}]], 
+        RowBox[{"\[Del]", 
+         RowBox[{"\.b2G", "(", "\[DoubleStruckR]", ")"}]}]}]}]}], " ", "+", 
+     " ", 
+     RowBox[{"m\.b2", 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        FractionBox[
+         RowBox[{"\[DifferentialD]", "\.b3\[DoubleStruckR]"}], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"2", "\[Pi]"}], ")"}], 
+          RowBox[{"3", "/", "2"}]]], " ", 
+        SuperscriptBox["\[ScriptE]", 
+         RowBox[{"-", 
+          RowBox[{
+          "\[ImaginaryI]\[DoubleStruckK]", ".", "\[DoubleStruckR]"}]}]], 
+        RowBox[{"G", "(", "\[DoubleStruckR]", ")"}]}]}]}]}], "=", " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", "\.b3\[DoubleStruckR]"}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], 
+        RowBox[{"3", "/", "2"}]]], " ", 
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{"-", 
+        RowBox[{"\[ImaginaryI]\[DoubleStruckK]", ".", "\[DoubleStruckR]"}]}]], 
+      RowBox[{"\[Delta]", "(", "\[DoubleStruckR]", ")"}]}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "321771c4-aeaf-40a6-a7b0-e8a14b0ca433"],
+ "\nNo espa\[CCedilla]o de Fourier, eu tenho que  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"\[Del]", "\.b2"}]}], " ", "=", 
+    RowBox[{"|", "\[DoubleStruckK]", "|", "\.b2"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "382aab60-bff2-4d7d-9929-f0e8eb35cbd1"],
+ " ",
+ StyleBox["(5.2)",
+  FontColor->RGBColor[1, 0, 0]],
+ " e ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox["\[Delta]", "~"], "(", "\[DoubleStruckK]", ")"}], " ", "=", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[DifferentialD]", "\.b3\[DoubleStruckR]"}], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2", "\[Pi]"}], ")"}], 
+         RowBox[{"3", "/", "2"}]]], " ", 
+       SuperscriptBox["\[ScriptE]", 
+        RowBox[{"-", 
+         RowBox[{
+         "\[ImaginaryI]\[DoubleStruckK]", ".", "\[DoubleStruckR]"}]}]], 
+       RowBox[{"\[Delta]", "(", "\[DoubleStruckR]", ")"}]}]}], "=", 
+     FractionBox["1", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"2", "\[Pi]"}], ")"}], 
+       RowBox[{"3", "/", "2"}]]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3d5b708e-c9e7-4d37-a20c-8a7709bb17dd"],
+ " ",
+ StyleBox["(5.3)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Assim, eu tenho:\n\[RightArrow]  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"|", "\[DoubleStruckK]", "|", 
+     RowBox[{
+      RowBox[{"\.b2", 
+       RowBox[{
+        OverscriptBox["G", "~"], "(", "\[DoubleStruckK]", ")"}]}], " ", "+", 
+      " ", 
+      RowBox[{"m\.b2", 
+       RowBox[{
+        OverscriptBox["G", "~"], "(", "\[DoubleStruckK]", ")"}]}]}]}], "=", 
+    FractionBox["1", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"2", "\[Pi]"}], ")"}], 
+      RowBox[{"3", "/", "2"}]]]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e2d8467b-db06-4628-82fc-64b96b86fd88"],
+ "  \[RightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox["G", "~"], "(", "\[DoubleStruckK]", ")"}], " ", "=", 
+    RowBox[{
+     FractionBox["1", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"2", "\[Pi]"}], ")"}], 
+       RowBox[{"3", "/", "2"}]]], 
+     FractionBox["1", 
+      RowBox[{"|", "\[DoubleStruckK]", "|", 
+       RowBox[{"\.b2", "+", " ", "m\.b2"}]}]]}]}], TraditionalForm]],
+  ExpressionUUID->"40ab05de-9495-4b30-a3fc-c1b189def220"],
+ " ",
+ StyleBox["(5.4)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\nAgora, voltando para o nosso espa\[CCedilla]o, temos:  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"G", "(", "\[DoubleStruckR]", ")"}], " ", " ", "=", 
+    RowBox[{
+     FractionBox["1", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"2", "\[Pi]"}], ")"}], "3"]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{"\[DifferentialD]", "\.b3\[DoubleStruckK]"}], 
+       FractionBox[
+        RowBox[{" ", 
+         SuperscriptBox["\[ScriptE]", 
+          RowBox[{
+          "\[ImaginaryI]\[DoubleStruckK]", ".", "\[DoubleStruckR]"}]]}], 
+        RowBox[{"|", "\[DoubleStruckK]", "|", 
+         RowBox[{"\.b2", "+", " ", "m\.b2"}]}]]}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"06cdd381-fec1-461d-b973-87f5832e4416"],
+ StyleBox["(5.5)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Vou fazer uma mudan\[CCedilla]a de vari\[AAcute]vel \[DoubleStruckK].\
+\[DoubleStruckR] = krcos\[Theta] ",
+ StyleBox["(5.6)",
+  FontColor->RGBColor[1, 0, 0]],
+ "e ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[DifferentialD]", "\.b3\[DoubleStruckK]"}], "=", 
+    RowBox[{
+    "k\.b2sin\[Theta]", " ", "dk", " ", "d\[Theta]", " ", "d\[Phi]"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c7c39c1f-0520-4979-a347-27796807dbe7"],
+ " ",
+ StyleBox["(5.7)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", para ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"k", ":", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"-", "\[Infinity]"}], ",", " ", "\[Infinity]"}], "]"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c232400e-0481-4d44-b730-b7638e007e03"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Phi]", ":", 
+    RowBox[{"[", 
+     RowBox[{"0", ",", 
+      RowBox[{"2", "\[Pi]"}]}], "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f81a4bcb-9c97-41e0-8c47-ccf8cc4aeea6"],
+ " e ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Theta]", ":", 
+    RowBox[{"[", 
+     RowBox[{"0", ",", "\[Pi]"}], "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7602b76e-d56e-4aa2-a9d5-1487768dcaca"],
+ ".\n \[RightArrow]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"G", "(", "\[DoubleStruckR]", ")"}], " ", "="}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cf335dc4-2a42-414e-8903-5ced3b2cfdfe"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"2", "\[Pi]"}], ")"}], "3"]], 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], " ", 
+     RowBox[{"dk", 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+       RowBox[{"sin\[Theta]", " ", "d\[Theta]", 
+        RowBox[{
+         SubsuperscriptBox["\[Integral]", "0", 
+          RowBox[{"2", "\[Pi]"}]], 
+         RowBox[{"d\[Phi]", 
+          FractionBox[
+           RowBox[{"k\.b2", " ", 
+            SuperscriptBox["\[ScriptE]", "\[ImaginaryI]krcos\[Theta]"]}], 
+           RowBox[{"|", "\[DoubleStruckK]", "|", 
+            RowBox[{"\.b2", "+", " ", "m\.b2"}]}]]}]}]}]}]}]}]}], 
+   TraditionalForm]],ExpressionUUID->"2067b539-cc93-4daf-9dfd-42f43ad752f8"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"2", "\[Pi]"}], ")"}], "2"]], 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], " ", 
+     RowBox[{"dk", 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+       RowBox[{"sin\[Theta]", " ", "d\[Theta]", 
+        FractionBox[
+         RowBox[{"k\.b2", " ", 
+          SuperscriptBox["\[ScriptE]", "\[ImaginaryI]krcos\[Theta]"]}], 
+         RowBox[{"|", "\[DoubleStruckK]", "|", 
+          RowBox[{"\.b2", "+", " ", "m\.b2"}]}]]}]}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"e2415c4a-42ad-42d0-84a9-af9ea0080bff"],
+ " ",
+ StyleBox["(5.8)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n Fazendo uma mudan\[CCedilla]a de vari\[AAcute]vel ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"z", "=", "cos\[Theta]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "beb2fc43-fabe-4b22-aa11-5088cf4487f0"],
+ " ",
+ StyleBox["(5.9)",
+  FontColor->RGBColor[1, 0, 0]],
+ " \[Implies] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"dz", "=", 
+    RowBox[{"-", "sin\[Theta]d\[Theta]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3347e189-cedd-4e4e-aae7-699dd912a6a6"],
+ " ",
+ StyleBox["(5.10)",
+  FontColor->RGBColor[1, 0, 0]],
+ ", eu tenho que:\n \[RightArrow]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"G", "(", "\[DoubleStruckR]", ")"}], " ", "="}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "84b17a67-9051-42a3-96e4-6b2f75fb8628"],
+ "  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "2"], "r\[ImaginaryI]"}]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], " ", 
+      RowBox[{"dk", 
+       RowBox[{
+        SubsuperscriptBox["\[Integral]", 
+         RowBox[{"-", "1"}], "1"], 
+        RowBox[{"dz", 
+         FractionBox[
+          RowBox[{"k", " ", 
+           SuperscriptBox["\[ScriptE]", "\[ImaginaryI]krz"]}], 
+          RowBox[{"|", "\[DoubleStruckK]", "|", 
+           RowBox[{"\.b2", "+", " ", "m\.b2"}]}]]}]}]}]}]}], " ", "="}], 
+   TraditionalForm]],ExpressionUUID->"8c535522-262f-45b7-a9f9-92b5db80b781"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "2"], "r\[ImaginaryI]"}]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], " ", 
+      RowBox[{"dk", 
+       FractionBox[
+        RowBox[{"k", "(", " ", 
+         RowBox[{
+          SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kr"], "-", " ", 
+          SuperscriptBox["\[ScriptE]", 
+           RowBox[{"-", "\[ImaginaryI]kr"}]]}], ")"}], 
+        RowBox[{"|", "\[DoubleStruckK]", "|", 
+         RowBox[{"\.b2", "+", " ", "m\.b2"}]}]]}]}]}], " ", "="}], 
+   TraditionalForm]],ExpressionUUID->"987fda72-4c7d-469f-88ff-18a7045ae497"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"2", "\[Pi]"}], ")"}], "2"], "r\[ImaginaryI]"}]], "[", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], " ", 
+      RowBox[{"dk", 
+       FractionBox[
+        RowBox[{"k", " ", 
+         SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kr"]}], 
+        RowBox[{"|", "\[DoubleStruckK]", "|", 
+         RowBox[{"\.b2", "+", " ", "m\.b2"}]}]]}]}], " ", "-", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], " ", 
+      RowBox[{"dk", 
+       FractionBox[
+        RowBox[{"k", " ", 
+         SuperscriptBox["\[ScriptE]", 
+          RowBox[{"-", "\[ImaginaryI]kr"}]]}], 
+        RowBox[{"|", "\[DoubleStruckK]", "|", 
+         RowBox[{"\.b2", "+", " ", "m\.b2"}]}]]}]}]}], "]"}], 
+   TraditionalForm]],ExpressionUUID->"721ecdd1-108f-4621-9bdb-8078b945648a"],
+ " ",
+ StyleBox["(5.11)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n Usando uma outra mudan\[CCedilla]a de vari\[AAcute]vel ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"-", "k"}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"k", "'"}], " ", 
+       StyleBox[
+        RowBox[{"(", "5.12", ")"}],
+        FontColor->RGBColor[1, 0, 0]]}], "\[Implies]", " ", 
+      RowBox[{"-", "dk"}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{"dk", "'"}], " ", 
+      StyleBox[
+       RowBox[{"(", "5.13", ")"}],
+       FontColor->RGBColor[1, 0, 0]]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6a88b299-131a-4ba8-ad99-6e1b2bdfd4bb"],
+ ". Assim:\n  \[RightArrow]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"G", "(", "\[DoubleStruckR]", ")"}], " ", "="}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4498b218-c5e1-4a46-92ca-333293cc3836"],
+ "   ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"2", "\[Pi]"}], ")"}], "2"], "r\[ImaginaryI]"}]], "[", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], " ", 
+      RowBox[{"dk", 
+       FractionBox[
+        RowBox[{"k", " ", 
+         SuperscriptBox["\[ScriptE]", "\[ImaginaryI]kr"]}], 
+        RowBox[{"|", "\[DoubleStruckK]", "|", 
+         RowBox[{"\.b2", "+", " ", "m\.b2"}]}]]}]}], " ", "+", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], " ", 
+      RowBox[{
+       RowBox[{"dk", "'"}], 
+       FractionBox[
+        RowBox[{
+         RowBox[{"k", "'"}], " ", 
+         SuperscriptBox["\[ScriptE]", 
+          RowBox[{
+           RowBox[{"\[ImaginaryI]k", "'"}], "r"}]]}], 
+        RowBox[{"|", 
+         RowBox[{"\[DoubleStruckK]", "'"}], "|", 
+         RowBox[{"\.b2", "+", " ", "m\.b2"}]}]]}]}]}], "]"}], 
+   TraditionalForm]],ExpressionUUID->"4be5428c-418a-4ab8-a589-0f347aec4cd5"],
+ " ",
+ StyleBox["(5.14)",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n  Aplicando os conhecimentos do item 1.d, tenho que:   ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"G", "(", "\[DoubleStruckR]", ")"}], " ", "=", " ", 
+    FormBox[
+     TagBox[GridBox[{
+        {"\[Piecewise]", GridBox[{
+           {
+            RowBox[{" ", 
+             FractionBox[
+              SuperscriptBox["\[ScriptE]", 
+               RowBox[{"-", "mx"}]], 
+              RowBox[{
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{"2", "\[Pi]"}], ")"}], "2"], "r"}]]}], 
+            RowBox[{",", " ", 
+             RowBox[{"x", ">", "0"}]}]},
+           {
+            RowBox[{" ", 
+             RowBox[{"-", 
+              FractionBox[
+               SuperscriptBox["\[ScriptE]", "mx"], 
+               RowBox[{
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{"2", "\[Pi]"}], ")"}], "2"], "r"}]]}]}], 
+            RowBox[{",", 
+             RowBox[{"x", "<", "0"}]}]}
+          },
+          AllowedDimensions->{2, Automatic},
+          Editable->True,
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+          GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.84]}, 
+              Offset[0.27999999999999997`]}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]}, 
+              Offset[0.2]}},
+          Selectable->True]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.35]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      "Piecewise",
+      DeleteWithContents->True,
+      Editable->False,
+      SelectWithContents->True,
+      Selectable->False],
+     TraditionalForm]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "49d32781-995a-43da-9fd4-0b6a2638bad8"],
+ " ",
+ StyleBox["(5.15)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Considerando que estou na situa\[CCedilla]\[ATilde]o x > 0. Tenho ent\
+\[ATilde]o que: ",
+ StyleBox["   ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"G", "(", "\[DoubleStruckR]", ")"}], " ", "=", 
+    RowBox[{
+     FractionBox["1", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"2", "\[Pi]"}], ")"}], "2"]], " ", 
+     FractionBox[
+      SuperscriptBox["\[ScriptE]", 
+       RowBox[{"-", "mx"}]], "r"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "9e27facf-c4b2-4ede-8ee8-1551341b3cfb"],
+ StyleBox["(5.16)",
+  FontColor->RGBColor[1, 0, 0]],
+ ". Com isso tenho que",
+ StyleBox[" ",
+  Background->RGBColor[1, 1, 0]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"g", " ", "=", " ", 
+    FractionBox["1", 
+     RowBox[{"2", "\[Pi]"}]], " "}], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  Background->RGBColor[1, 1, 0],ExpressionUUID->
+  "41aeae20-c3fb-490b-80b5-ffcc7388a94e"],
+ StyleBox["(5.17)",
+  FontColor->RGBColor[1, 0, 0]],
+ ".\n "
+}], "Subsubsection",
+ CellChangeTimes->{{3.810496567480349*^9, 3.810496785023419*^9}, {
+   3.8104968253883047`*^9, 3.81049685516148*^9}, {3.8104968870923567`*^9, 
+   3.810497091675892*^9}, {3.810497122108096*^9, 3.810497208147773*^9}, {
+   3.810497240704751*^9, 3.810497515028119*^9}, {3.8104975521043997`*^9, 
+   3.810497680657391*^9}, {3.810497729306912*^9, 3.810498159897539*^9}, {
+   3.810498201948586*^9, 3.810498338750412*^9}, {3.810498487060205*^9, 
+   3.8104987016598988`*^9}, {3.810498861282568*^9, 3.810498932916256*^9}, {
+   3.810498973828445*^9, 3.81049900067556*^9}, 3.814796645029892*^9, {
+   3.814970990955768*^9, 3.814971049026967*^9}, {3.814971082341164*^9, 
+   3.814971104243391*^9}, {3.814971142257814*^9, 3.814971203708331*^9}, {
+   3.8149712838280573`*^9, 3.8149713112539873`*^9}, {3.814971341921608*^9, 
+   3.8149713919659653`*^9}, {3.81497143081783*^9, 3.814971482799073*^9}, {
+   3.814971518795805*^9, 3.8149715693132763`*^9}, {3.814972218913905*^9, 
+   3.814972229781034*^9}, {3.814972294023539*^9, 3.814972408768791*^9}, {
+   3.8149724484846373`*^9, 3.814972725609809*^9}, {3.814972837225813*^9, 
+   3.814972840883095*^9}, {3.814972918084076*^9, 3.8149731319887857`*^9}, {
+   3.814973199994687*^9, 3.814973483154149*^9}, {3.8149735143571987`*^9, 
+   3.81497364187816*^9}, {3.814973694415057*^9, 3.814973747547542*^9}, {
+   3.8149737897464123`*^9, 3.814974031984782*^9}, {3.814974075645199*^9, 
+   3.814974092556155*^9}, {3.814974684256372*^9, 3.814975163560149*^9}, {
+   3.814975232279599*^9, 3.8149753688226748`*^9}},
+ FontColor->GrayLevel[
+  0],ExpressionUUID->"ca982220-8001-402f-a937-566a8349eef9"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1215, 1023},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 375, 5, 99, "Title",ExpressionUUID->"effb5c00-3ce9-469b-8f85-4ab07d46e715"],
+Cell[958, 29, 319, 5, 60, "Text",ExpressionUUID->"87594bf7-d843-4357-8f26-f7fcbc819380"],
+Cell[CellGroupData[{
+Cell[1302, 38, 295, 5, 68, "Section",ExpressionUUID->"d5047e30-8ae2-4626-84e9-c36c3dcec65d"],
+Cell[1600, 45, 11559, 361, 363, "Subsubsection",ExpressionUUID->"0d6baea0-c377-4133-9378-a7659a432eb8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13196, 411, 297, 5, 68, "Section",ExpressionUUID->"827bba0a-2b21-4f57-92de-caa35ef01527"],
+Cell[13496, 418, 7646, 228, 261, "Subsubsection",ExpressionUUID->"519b759b-bd1b-402d-bc74-75f07772c057"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21179, 651, 294, 5, 68, "Section",ExpressionUUID->"e7c90e22-56a1-4122-8f46-03d6f20ffbae"],
+Cell[21476, 658, 4936, 151, 139, "Subsubsection",ExpressionUUID->"3f9206ef-99d7-4472-87d5-c94b2697749e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26449, 814, 296, 5, 68, "Section",ExpressionUUID->"1bc211f6-f7ed-4a03-9668-33ffe989b029"],
+Cell[26748, 821, 6314, 188, 178, "Subsubsection",ExpressionUUID->"6440d672-92ea-4cae-ba70-7a112470d8c9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33099, 1014, 291, 5, 68, "Section",ExpressionUUID->"5689e171-a44f-4b7e-9a71-a3ef92d5dead"],
+Cell[CellGroupData[{
+Cell[33415, 1023, 15377, 483, 503, "Subsubsection",ExpressionUUID->"03abc564-b388-4a12-9fec-7aedd2d33b2b"],
+Cell[48795, 1508, 868, 23, 74, "Input",ExpressionUUID->"0db669d7-b125-4e51-a6cd-0985e4447d3a"],
+Cell[49666, 1533, 685, 20, 81, "Input",ExpressionUUID->"9dc89bd7-a76b-4ebf-9f0b-961cdd32db72"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50400, 1559, 272, 5, 68, "Section",ExpressionUUID->"7c7ae08b-b4df-4f9b-8e38-662545fd0355"],
+Cell[50675, 1566, 15318, 459, 644, "Subsubsection",ExpressionUUID->"3629ae4a-290f-4036-8ca1-68ab57b87837"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66030, 2030, 320, 5, 68, "Section",ExpressionUUID->"b70f980c-9527-4835-ad96-9f8f996904d4"],
+Cell[66353, 2037, 4264, 114, 162, "Subsubsection",ExpressionUUID->"f9c52f08-6b12-41be-ab4d-2b0448c54a5e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70654, 2156, 320, 5, 68, "Section",ExpressionUUID->"b5b7f2b2-51d1-48a9-a008-da6f7f3d16b4"],
+Cell[70977, 2163, 6962, 188, 248, "Subsubsection",ExpressionUUID->"40682715-1f83-4ffd-b4f9-c887b182d2f8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77976, 2356, 320, 5, 68, "Section",ExpressionUUID->"9441953c-a249-4696-b490-08a1e55d4f80"],
+Cell[78299, 2363, 10883, 312, 410, "Subsubsection",ExpressionUUID->"168b5b60-ee42-4a15-94ce-30df198e702d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89219, 2680, 274, 5, 68, "Section",ExpressionUUID->"2753ebfc-ce81-41f2-9153-46faef6c3676"],
+Cell[89496, 2687, 20526, 598, 649, "Subsubsection",ExpressionUUID->"ca982220-8001-402f-a937-566a8349eef9"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
